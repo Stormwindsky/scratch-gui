@@ -186,7 +186,7 @@ module.exports = [
                 chunks: ['editor'],
                 template: 'src/playground/index.ejs',
                 filename: 'editor.html',
-                title: `${APP_NAME} - Run Scratch projects faster`,
+                title: `${APP_NAME} - StormWarp - Lightning Fast Scratch`,
                 isEditor: true,
                 ...htmlWebpackPluginCommon
             }),
