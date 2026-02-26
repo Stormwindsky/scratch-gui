@@ -1,15 +1,9 @@
 /* overridden by src/lib/themes/guiHelpers.js */
 
-/* COULEURS STORMVARP FORCÉES */
-$ui-primary: #FFEE00;
-$ui-secondary: #FFEE00;
-$ui-tertiary: #CCCC00;
+$ui-primary: var(--ui-primary);
+$ui-secondary: var(--ui-secondary);
+$ui-tertiary: var(--ui-tertiary);
 
-$menu-bar-background: #FFEE00;
-$red-primary: #FFEE00;
-$red-tertiary: #CCCC00;
-
-/* VARIABLES STANDARDS */
 $ui-modal-overlay: var(--ui-modal-overlay);
 $ui-modal-background: var(--ui-modal-background);
 $ui-modal-foreground: var(--ui-modal-foreground);
@@ -34,6 +28,9 @@ $looks-transparent: var(--looks-transparent);
 $looks-light-transparent: var(--looks-light-transparent);
 $looks-secondary-dark: var(--looks-secondary-dark);
 
+$red-primary: var(--red-primary);
+$red-tertiary: var(--red-tertiary);
+
 $sound-primary: var(--sound-primary);
 $sound-tertiary: var(--sound-tertiary);
 
@@ -56,6 +53,7 @@ $extensions-light: var(--extensions-light);
 
 $drop-highlight: var(--drop-highlight);
 
+$menu-bar-background: var(--menu-bar-background);
 $menu-bar-background-image: var(--menu-bar-background-image);
 $menu-bar-foreground: var(--menu-bar-foreground);
 
