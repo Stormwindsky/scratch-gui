@@ -186,7 +186,7 @@ module.exports = [
                 chunks: ['editor'],
                 template: 'src/playground/index.ejs',
                 filename: 'editor.html',
-                title: `${APP_NAME} - StormWarp - Lightning Fast Scratch`,
+                title: `${APP_NAME} - Lightning Fast Scratch`,
                 isEditor: true,
                 ...htmlWebpackPluginCommon
             }),
@@ -194,14 +194,14 @@ module.exports = [
                 chunks: ['player'],
                 template: 'src/playground/index.ejs',
                 filename: 'index.html',
-                title: `${APP_NAME} - Run Scratch projects faster`,
+                title: `${APP_NAME} - Lightning Fast Scratch`,
                 ...htmlWebpackPluginCommon
             }),
             new HtmlWebpackPlugin({
                 chunks: ['fullscreen'],
                 template: 'src/playground/index.ejs',
                 filename: 'fullscreen.html',
-                title: `${APP_NAME} - Run Scratch projects faster`,
+                title: `${APP_NAME} - Lightning Fast Scratch`,
                 ...htmlWebpackPluginCommon
             }),
             new HtmlWebpackPlugin({
