@@ -28810,7 +28810,7 @@ __webpack_require__.r(__webpack_exports__);
 const getProjectTitleFromFilename = fileInputFilename => {
   if (!fileInputFilename) return '';
   // only parse title with valid scratch project extensions
-  // (.sb, .sb2, and .sb3)
+  // (.sb, .sb2, .sb3 and .sw)
   const matches = fileInputFilename.match(/^(.*)\.sb[23]?$/);
   if (!matches) return '';
   return matches[1].substring(0, 100); // truncate project title to max 100 chars
@@ -28892,7 +28892,7 @@ class SB3Downloader extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Compone
         types: [{
           description: 'Scratch 3 Project',
           accept: {
-            'application/octet-stream': '.sb3'
+            'application/octet-stream': '.sw'
           }
         }],
         excludeAcceptAllOption: true
@@ -29047,7 +29047,7 @@ const getProjectFilename = (curTitle, defaultTitle) => {
   if (!filenameTitle || filenameTitle.length === 0) {
     filenameTitle = defaultTitle;
   }
-  return "".concat(filenameTitle.substring(0, 100), ".sb3");
+  return "".concat(filenameTitle.substring(0, 100), ".sw");
 };
 SB3Downloader.propTypes = {
   children: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func,
