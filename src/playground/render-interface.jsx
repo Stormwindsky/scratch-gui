@@ -165,10 +165,17 @@ const Footer = () => (
                             id="tw.feedback"
                         />
                     </a>
-                    <a href="https://github.com/TurboWarp/">
+                    <a href="https://github.com/Stormwindsky/List-of-repository-linked-with-StormWarp">
                         <FormattedMessage
                             defaultMessage="Source Code"
                             description="Link to source code"
+                            
+                        />
+                    </a>
+                    <a href="https://github.com/TurboWarp/">
+                        <FormattedMessage
+                            defaultMessage="Source Code of Turbowarp"
+                            description="Link to source code of Turbowarp"
                             id="tw.code"
                         />
                     </a>
