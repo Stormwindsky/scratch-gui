@@ -9489,7 +9489,7 @@ GUIComponent.defaultProps = {
   enableCommunity: false,
   isCreating: false,
   isShared: false,
-  isTotallyNormal: false,
+  isTotallyNormal: true,
   loading: false,
   showComingSoon: false,
   stageSizeMode: _lib_layout_constants__WEBPACK_IMPORTED_MODULE_38__["STAGE_SIZE_MODES"].large
