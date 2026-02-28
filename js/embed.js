@@ -13259,6 +13259,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+// Added ACCENT_YELLOW to the imports below
 
 
 
@@ -13281,6 +13282,11 @@ const options = Object(react_intl__WEBPACK_IMPORTED_MODULE_3__["defineMessages"]
   [_lib_themes_index_js__WEBPACK_IMPORTED_MODULE_8__["ACCENT_RAINBOW"]]: {
     "id": "tw.accent.rainbow",
     "defaultMessage": "Rainbow"
+  },
+  // Added Yellow option below
+  [_lib_themes_index_js__WEBPACK_IMPORTED_MODULE_8__["ACCENT_YELLOW"]]: {
+    "id": "tw.accent.yellow",
+    "defaultMessage": "Yellow"
   }
 });
 const icons = {
