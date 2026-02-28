@@ -49356,7 +49356,7 @@ const Footer = () => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.c
 }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react_intl__WEBPACK_IMPORTED_MODULE_5__["FormattedMessage"]
 // eslint-disable-next-line max-len
 , {
-  defaultMessage: "{APP_NAME} is not affiliated with Scratch, the Scratch Team, or the Scratch Foundation.",
+  defaultMessage: "{APP_NAME} is not affiliated with Turbowarp, Scratch, the Scratch Team, or the Scratch Foundation.",
   id: "tw.footer.disclaimer",
   values: {
     APP_NAME: _lib_brand_js__WEBPACK_IMPORTED_MODULE_27__["APP_NAME"]
@@ -49494,7 +49494,7 @@ class Interface extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Component {
     description.instructions === 'unshared' || description.credits === 'unshared') && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
       className: classnames__WEBPACK_IMPORTED_MODULE_0___default()(_interface_css__WEBPACK_IMPORTED_MODULE_28___default.a.infobox, _interface_css__WEBPACK_IMPORTED_MODULE_28___default.a.unsharedUpdate)
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("p", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react_intl__WEBPACK_IMPORTED_MODULE_5__["FormattedMessage"], {
-      defaultMessage: "Unshared projects are no longer visible.",
+      defaultMessage: "Unshared projects are no longer visible. \uD83D\uDE31",
       id: "tw.unshared2.1"
     })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("p", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react_intl__WEBPACK_IMPORTED_MODULE_5__["FormattedMessage"], {
       defaultMessage: "For more information, visit: {link}",
@@ -49529,7 +49529,7 @@ class Interface extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Component {
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("p", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react_intl__WEBPACK_IMPORTED_MODULE_5__["FormattedMessage"]
     // eslint-disable-next-line max-len
     , {
-      defaultMessage: "{APP_NAME} is a Scratch mod that compiles projects to JavaScript to make them run really fast. Try it out by inputting a project ID or URL above or choosing a featured project below.",
+      defaultMessage: "{APP_NAME} is a Scratch mod based on Turbowarp. Try it out by inputting a project ID or URL above or choosing a featured project below.",
       id: "tw.home.description",
       values: {
         APP_NAME: _lib_brand_js__WEBPACK_IMPORTED_MODULE_27__["APP_NAME"]
