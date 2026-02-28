@@ -24,8 +24,15 @@ const manuallyTrustExtension = url => {
  * @returns {boolean} True if the extension can is trusted
  */
 const isTrustedExtension = url => (
-    // Always trust our official extension repostiory.
+    // Always trust the Turbowarp official extension repostiory.
     url.startsWith('https://extensions.turbowarp.org/') ||
+    // If you are a developer at PenguinMod, please read this:
+    // I didn't steal any of your source code. I just looked at the URLs of your trusted extensions because I only knew SharkPools
+    // and PenguinMods. Please understand that I literally didn't steal anything, but go check out their work too
+    // at PenguinMod because they're really good too, and I'm a big fan of their work :)
+    url.startsWith('https://extensions.penguinmod.com/') ||
+    url.startsWith('https://sharkpools-extensions.vercel.app/') ||
+    url.startsWith('https://cdn.jsdelivr.net/gh/Stormwindsky/My-Extension-Blocks-under-license-CC0-1.0-for-Turbowarp@main/List/') ||
 
     // For development.
     url.startsWith('http://localhost:8000/') ||
