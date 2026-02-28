@@ -169,7 +169,7 @@ const Footer = () => (
                         <FormattedMessage
                             defaultMessage="Source Code"
                             description="Link to source code"
-                            
+                            id="tw.footer.sourceCode"
                         />
                     </a>
                     <a href="https://github.com/TurboWarp/">
