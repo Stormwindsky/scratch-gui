@@ -7,19 +7,41 @@
     align-items: center;
     justify-content: center;
 }
+
 .spinner {
     width: 64px;
     height: 64px;
     border-radius: 50%;
-    border: 6px solid;
-    border-color: $looks-secondary transparent $looks-secondary transparent;
-    animation: spinner 1.2s linear infinite;
+    /* On définit une bordure complète transparente */
+    border: 6px solid transparent;
+    /* On colore uniquement le haut pour l'effet "dash" */
+    border-top-color: $looks-secondary;
+    /* L'animation combine rotation et modification du tracé */
+    animation: spinner-dash 1.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }
-@keyframes spinner {
+
+@keyframes spinner-dash {
     0% {
         transform: rotate(0deg);
+        border-top-color: $looks-secondary;
+    }
+    25% {
+        /* On simule l'extension du trait en colorant le côté à 90° */
+        border-right-color: $looks-secondary;
+        transform: rotate(90deg);
+    }
+    50% {
+        border-right-color: $looks-secondary;
+        border-bottom-color: $looks-secondary;
+        transform: rotate(180deg);
+    }
+    75% {
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+        transform: rotate(270deg);
     }
     100% {
         transform: rotate(360deg);
+        border-top-color: $looks-secondary;
     }
 }
