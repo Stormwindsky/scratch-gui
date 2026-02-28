@@ -3033,12 +3033,14 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "/* overridden by src/lib/themes/guiHelpers.js */\n\n.spinner_container_2gp3A {\n    display: flex;\n    width: 100%;\n    height: 100%;\n    align-items: center;\n    justify-content: center;\n}\n\n.spinner_spinner_3_DJ6 {\n    width: 64px;\n    height: 64px;\n    border-radius: 50%;\n    border: 6px solid;\n    border-color: var(--looks-secondary) transparent var(--looks-secondary) transparent;\n    animation: spinner_spinner_3_DJ6 1.2s linear infinite;\n}\n\n@keyframes spinner_spinner_3_DJ6 {\n    0% {\n        transform: rotate(0deg);\n    }\n    100% {\n        transform: rotate(360deg);\n    }\n}\n", ""]);
+exports.push([module.i, "/* overridden by src/lib/themes/guiHelpers.js */\n\n.spinner_container_2gp3A {\n    display: flex;\n    width: 100%;\n    height: 100%;\n    align-items: center;\n    justify-content: center;\n}\n\n.spinner_spinner_3_DJ6 {\n    width: 64px;\n    height: 64px;\n    border-radius: 50%;\n    /* On définit une bordure complète transparente */\n    border: 6px solid transparent;\n    /* On colore uniquement le haut pour l'effet \"dash\" */\n    border-top-color: var(--looks-secondary);\n    /* L'animation combine rotation et modification du tracé */\n    animation: spinner_spinner-dash_1WUZ2 1.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;\n}\n\n@keyframes spinner_spinner-dash_1WUZ2 {\n    0% {\n        transform: rotate(0deg);\n        border-top-color: var(--looks-secondary);\n    }\n    25% {\n        /* On simule l'extension du trait en colorant le côté à 90° */\n        border-right-color: var(--looks-secondary);\n        transform: rotate(90deg);\n    }\n    50% {\n        border-right-color: var(--looks-secondary);\n        border-bottom-color: var(--looks-secondary);\n        transform: rotate(180deg);\n    }\n    75% {\n        border-right-color: transparent;\n        border-bottom-color: transparent;\n        transform: rotate(270deg);\n    }\n    100% {\n        transform: rotate(360deg);\n        border-top-color: var(--looks-secondary);\n    }\n}\n", ""]);
 
 // exports
 exports.locals = {
 	"container": "spinner_container_2gp3A",
-	"spinner": "spinner_spinner_3_DJ6"
+	"spinner": "spinner_spinner_3_DJ6",
+	"spinner-dash": "spinner_spinner-dash_1WUZ2",
+	"spinnerDash": "spinner_spinner-dash_1WUZ2"
 };
 
 /***/ }),
