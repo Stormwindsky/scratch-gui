@@ -1102,7 +1102,7 @@ class AddonSettingsComponent extends React.Component {
                             />
                         </div>
                         <a
-                            href="https://scratch.mit.edu/users/GarboMuffin/#comments"
+                            href="https://gamejolt.com/c/Stormwindsky-yk7ybk/stormwarp_feedback"
                             target="_blank"
                             rel="noreferrer"
                             className={styles.feedbackButtonOuter}
