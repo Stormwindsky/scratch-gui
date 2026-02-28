@@ -4,6 +4,7 @@ import * as accentPurple from './accent/purple';
 import * as accentBlue from './accent/blue';
 import * as accentRed from './accent/red';
 import * as accentRainbow from './accent/rainbow';
+import * as accentYellow from './accent/yellow'; // Added Yellow accent
 
 import * as guiLight from './gui/light';
 import * as guiDark from './gui/dark';
@@ -16,13 +17,18 @@ const ACCENT_PURPLE = 'purple';
 const ACCENT_BLUE = 'blue';
 const ACCENT_RED = 'red';
 const ACCENT_RAINBOW = 'rainbow';
+const ACCENT_YELLOW = 'yellow'; // Added Yellow constant
+
 const ACCENT_MAP = {
     [ACCENT_PURPLE]: accentPurple,
     [ACCENT_BLUE]: accentBlue,
     [ACCENT_RED]: accentRed,
-    [ACCENT_RAINBOW]: accentRainbow
+    [ACCENT_RAINBOW]: accentRainbow,
+    [ACCENT_YELLOW]: accentYellow // Added Yellow to the map
 };
-const ACCENT_DEFAULT = ACCENT_RED;
+
+// Set Yellow as the default accent theme
+const ACCENT_DEFAULT = ACCENT_YELLOW; 
 
 const GUI_LIGHT = 'light';
 const GUI_DARK = 'dark';
@@ -150,6 +156,7 @@ export {
     ACCENT_PURPLE,
     ACCENT_BLUE,
     ACCENT_RAINBOW,
+    ACCENT_YELLOW, // Exported Yellow
     ACCENT_MAP,
 
     GUI_LIGHT,
