@@ -12912,7 +12912,7 @@ class MenuBar extends react__WEBPACK_IMPORTED_MODULE_7___default.a.Component {
       defaultMessage: "Some scripts encountered errors.",
       id: "tw.menuBar.reportError1"
     })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(MenuItemLink, {
-      href: "https://scratch.mit.edu/users/GarboMuffin/#comments"
+      href: "https://gamejolt.com/c/Stormwindsky-yk7ybk/stormwarp_feedback"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(react_intl__WEBPACK_IMPORTED_MODULE_3__["FormattedMessage"], {
       defaultMessage: "This is a bug. Please report it.",
       id: "tw.menuBar.reportError2"
@@ -13237,7 +13237,7 @@ class MenuBar extends react__WEBPACK_IMPORTED_MODULE_7___default.a.Component {
       className: _menu_bar_css__WEBPACK_IMPORTED_MODULE_39___default.a.menuBarItem
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
       className: _menu_bar_css__WEBPACK_IMPORTED_MODULE_39___default.a.feedbackLink,
-      href: "https://scratch.mit.edu/users/GarboMuffin/#comments",
+      href: "https://gamejolt.com/c/Stormwindsky-yk7ybk/stormwarp_feedback",
       rel: "noopener noreferrer",
       target: "_blank"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_button_button_jsx__WEBPACK_IMPORTED_MODULE_10__["default"], {
