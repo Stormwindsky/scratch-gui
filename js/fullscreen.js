@@ -22261,7 +22261,7 @@ const InvalidEmbed = () => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___defau
 }, 'https://turbowarp.org/<project ID>/embed'), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, 'Here\'s an example of a full iframe to embed a project:'), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
   className: _invalid_embed_css__WEBPACK_IMPORTED_MODULE_1___default.a.code
 }, "<iframe src=\"https://turbowarp.org/60917032/embed\" width=\"482\" height=\"412\" allowtransparency=\"true\" frameborder=\"0\" scrolling=\"no\" allowfullscreen></iframe>"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, 'If you are seeing this page even though you aren\'t embedding anything, let us know on ', /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-  href: "https://scratch.mit.edu/users/GarboMuffin/#comments",
+  href: "https://gamejolt.com/c/Stormwindsky-yk7ybk/stormwarp_feedback",
   target: "_blank",
   rel: "noreferrer"
 }, 'scratch.mit.edu/users/GarboMuffin'), '.'));
