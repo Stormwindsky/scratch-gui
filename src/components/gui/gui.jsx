@@ -162,7 +162,6 @@ const GUIComponent = props => {
         vm,
         ...componentProps
     } = omit(props, 'dispatch');
-    isTotallyNormal = true;
     if (children) {
         return <Box {...componentProps}>{children}</Box>;
     }
