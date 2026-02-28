@@ -42079,9 +42079,6 @@ __webpack_require__.r(__webpack_exports__);
   tag: 'scratch',
   intlLabel: 'Scratch'
 }, {
-  tag: 'tw',
-  intlLabel: Turbowarp
-}, {
   tag: 'sw',
   intlLabel: _brand__WEBPACK_IMPORTED_MODULE_0__["APP_NAME"]
 }]);
