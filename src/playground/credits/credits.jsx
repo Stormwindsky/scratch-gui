@@ -61,7 +61,8 @@ const Credits = () => (
         </header>
         <section>
             <p>
-                The {APP_NAME} project is made possible by the work of many volunteers.
+                The Turbowarp project is made possible by the work of many volunteers.
+                Without Turbowarp, {APP_NAME} would probably never have been created, so a big thank you to its contributors and developers.
             </p>
         </section>
         {APP_NAME !== 'TurboWarp' && (
@@ -103,7 +104,7 @@ const Credits = () => (
         <section>
             <h2>Translators</h2>
             <p>
-                More than 100 people have helped translate {APP_NAME} and its addons into many languages
+                More than 100 people have helped translate Turbowarp and its addons into many languages
                 &mdash; far more than we could hope to list here.
             </p>
         </section>
