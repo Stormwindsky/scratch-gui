@@ -86,7 +86,7 @@ const Credits = () => (
             </p>
         </section>
         <section>
-            <h2>Contributors</h2>
+            <h2>Contributors from Turbowarp</h2>
             <UserList users={UserData.contributors} />
         </section>
         <section>
@@ -98,11 +98,11 @@ const Credits = () => (
             <UserList users={UserData.extensionDevelopers} />
         </section>
         <section>
-            <h2>Documentation</h2>
+            <h2>Documentation of Turbowarp</h2>
             <UserList users={UserData.docs} />
         </section>
         <section>
-            <h2>Translators</h2>
+            <h2>Translators of Turbowarp</h2>
             <p>
                 More than 100 people have helped translate Turbowarp and its addons into many languages
                 &mdash; far more than we could hope to list here.
