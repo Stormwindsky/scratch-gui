@@ -483,7 +483,7 @@ export const galleryMore = {
 
 // test
 
-export const galleryLoading = {
+export const galleryStorm = {
     name: (
         <FormattedMessage
             defaultMessage="{APP_NAME} Extension Gallery"
