@@ -523,7 +523,7 @@ class MenuBar extends React.Component {
                                                 id="tw.menuBar.reportError1"
                                             />
                                         </MenuItemLink>
-                                        <MenuItemLink href="https://scratch.mit.edu/users/GarboMuffin/#comments">
+                                        <MenuItemLink href="https://gamejolt.com/c/Stormwindsky-yk7ybk/stormwarp_feedback">
                                             <FormattedMessage
                                                 defaultMessage="This is a bug. Please report it."
                                                 description="Link in error menu"
@@ -1015,7 +1015,7 @@ class MenuBar extends React.Component {
                     <div className={styles.menuBarItem}>
                         <a
                             className={styles.feedbackLink}
-                            href="https://scratch.mit.edu/users/GarboMuffin/#comments"
+                            href="https://gamejolt.com/c/Stormwindsky-yk7ybk/stormwarp_feedback"
                             rel="noopener noreferrer"
                             target="_blank"
                         >
