@@ -481,6 +481,37 @@ export const galleryMore = {
     featured: true
 };
 
+// test
+
+export const galleryLoading = {
+    name: (
+        <FormattedMessage
+            defaultMessage="{APP_NAME} Extension Gallery"
+            description="Name of StormWarp in extension library"
+            id="sw.extensionGallery.name"
+            values={{
+                APP_NAME
+            }}
+        />
+    ),
+    href: 'https://www.stormwindsky.com/Tools/Extensions%20Library%20(StormWarp).html',
+    extensionId: 'gallery',
+    iconURL: galleryIcon,
+    description: (
+        <FormattedMessage
+            // eslint-disable-next-line max-len
+            defaultMessage="Loading extension gallery..."
+            description="Appears while loading extension list from the custom extension gallery"
+            id="sw.extensionGallery.loading"
+        />
+    ),
+    tags: ['sw'],
+    featured: true
+};
+
+
+// test
+
 export const galleryError = {
     name: (
         <FormattedMessage
@@ -506,3 +537,5 @@ export const galleryError = {
     tags: ['tw'],
     featured: true
 };
+
+
