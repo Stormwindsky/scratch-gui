@@ -10350,7 +10350,6 @@ const GUIComponent = props => {
       vm
     } = _omit,
     componentProps = _objectWithoutProperties(_omit, _excluded);
-  isTotallyNormal = true;
   if (children) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_box_box_jsx__WEBPACK_IMPORTED_MODULE_16__["default"], componentProps, children);
   }
