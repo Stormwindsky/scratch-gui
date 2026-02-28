@@ -87,8 +87,8 @@ const Footer = () => (
             <div className={styles.footerText}>
                 <FormattedMessage
                     // eslint-disable-next-line max-len
-                    defaultMessage="{APP_NAME} is not affiliated with Scratch, the Scratch Team, or the Scratch Foundation."
-                    description="Disclaimer that TurboWarp is not connected to Scratch"
+                    defaultMessage="{APP_NAME} is not affiliated with Turbowarp, Scratch, the Scratch Team, or the Scratch Foundation."
+                    description="Disclaimer that TurboWarp & StormWarp is not connected to Scratch & also we don't affiliated with the Turbowarp Team"
                     id="tw.footer.disclaimer"
                     values={{
                         APP_NAME
@@ -270,7 +270,7 @@ class Interface extends React.Component {
                                 <div className={classNames(styles.infobox, styles.unsharedUpdate)}>
                                     <p>
                                         <FormattedMessage
-                                            defaultMessage="Unshared projects are no longer visible."
+                                            defaultMessage="Unshared projects are no longer visible. 😱"
                                             description="Appears on unshared projects"
                                             id="tw.unshared2.1"
                                         />
@@ -329,8 +329,8 @@ class Interface extends React.Component {
                                 <p>
                                     <FormattedMessage
                                         // eslint-disable-next-line max-len
-                                        defaultMessage="{APP_NAME} is a Scratch mod that compiles projects to JavaScript to make them run really fast. Try it out by inputting a project ID or URL above or choosing a featured project below."
-                                        description="Description of TurboWarp on the homepage"
+                                        defaultMessage="{APP_NAME} is a Scratch mod based on Turbowarp. Try it out by inputting a project ID or URL above or choosing a featured project below."
+                                        description="Description of StormWarp on the homepage"
                                         id="tw.home.description"
                                         values={{
                                             APP_NAME
