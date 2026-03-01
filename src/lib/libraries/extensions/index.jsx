@@ -482,13 +482,12 @@ export const galleryMore = {
 };
 
 // test
-
 export const galleryStorm = {
     name: (
         <FormattedMessage
             defaultMessage="{APP_NAME} Extension Gallery"
             description="Name of StormWarp in extension library"
-            id="sw.extensionGallery.name"
+            id="stormWarpUnique.extensionGallery.name"
             values={{
                 APP_NAME
             }}
@@ -502,14 +501,12 @@ export const galleryStorm = {
             // eslint-disable-next-line max-len
             defaultMessage="Loading extension gallery..."
             description="Appears while loading extension list from the custom extension gallery"
-            id="sw.extensionGallery.loading"
+            id="stormWarpUnique.extensionGallery.loading"
         />
     ),
     tags: ['sw'],
     featured: true
 };
-
-
 // test
 
 export const galleryError = {
