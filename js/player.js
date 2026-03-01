@@ -41125,14 +41125,13 @@ module.exports = __webpack_require__.p + "static/assets/c73619fea5bb43c53a080399
 /*!************************************************!*\
   !*** ./src/lib/libraries/extensions/index.jsx ***!
   \************************************************/
-/*! exports provided: default, galleryLoading, galleryMore, galleryStorm, galleryError */
+/*! exports provided: default, galleryLoading, galleryMore, galleryError */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "galleryLoading", function() { return galleryLoading; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "galleryMore", function() { return galleryMore; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "galleryStorm", function() { return galleryStorm; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "galleryError", function() { return galleryError; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
@@ -41562,32 +41561,6 @@ const galleryMore = {
   tags: ['tw'],
   featured: true
 };
-
-// test
-
-const galleryStorm = {
-  name: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_intl__WEBPACK_IMPORTED_MODULE_1__["FormattedMessage"], {
-    defaultMessage: "{APP_NAME} Extension Gallery",
-    id: "sw.extensionGallery.name",
-    values: {
-      APP_NAME: _brand__WEBPACK_IMPORTED_MODULE_37__["APP_NAME"]
-    }
-  }),
-  href: 'https://www.stormwindsky.com/Tools/Extensions%20Library%20(StormWarp).html',
-  extensionId: 'gallery',
-  iconURL: _gallery_gallery_svg__WEBPACK_IMPORTED_MODULE_36___default.a,
-  description: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_intl__WEBPACK_IMPORTED_MODULE_1__["FormattedMessage"]
-  // eslint-disable-next-line max-len
-  , {
-    defaultMessage: "Loading extension gallery...",
-    id: "sw.extensionGallery.loading"
-  }),
-  tags: ['sw'],
-  featured: true
-};
-
-// test
-
 const galleryError = {
   name: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_intl__WEBPACK_IMPORTED_MODULE_1__["FormattedMessage"], {
     defaultMessage: "{APP_NAME} Extension Gallery",
