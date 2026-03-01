@@ -81,6 +81,46 @@ if (AddonChannels.changeChannel) {
 
 runAddons();
 
+const getDynamicStudioId = () => {
+    const now = new Date();
+    const month = now.getMonth() + 1; // Janvier est 0
+    const day = now.getDate();
+
+    // --- DATES SPÉCIFIQUES ---
+
+    // Noël (25 Décembre)
+    if (month === 12 && day === 25) {
+        const ids = ['51004368', '1727765', '1776351', '187119'];
+        return ids[Math.floor(Math.random() * ids.length)];
+    }
+
+    // Halloween (31 Octobre)
+    if (month === 10 && day === 31) {
+        const ids = ['27821923', '263587', '4312387'];
+        return ids[Math.floor(Math.random() * ids.length)];
+    }
+
+    // 20 Mars
+    if (month === 3 && day === 20) {
+        const ids = ['29401013', '4985624', '35787684'];
+        return ids[Math.floor(Math.random() * ids.length)];
+    }
+
+    // 24 Avril
+    if (month === 4 && day === 24) {
+        return '25118761';
+    }
+
+    // 5 Mars
+    if (month === 3 && day === 5) {
+        return '27572045';
+    }
+
+    // --- CAS PAR DÉFAUT (Aléatoire à chaque rechargement) ---
+    const defaultIds = ['28715018', '146521', '16346', '154', '105751'];
+    return defaultIds[Math.floor(Math.random() * defaultIds.length)];
+};
+
 const Footer = () => (
     <footer className={styles.footer}>
         <div className={styles.footerContent}>
@@ -346,7 +386,7 @@ class Interface extends React.Component {
                                 </p>
                             </div>
                             <div className={styles.section}>
-                                <FeaturedProjects studio="105751" />
+                                <FeaturedProjects studio={getDynamicStudioId()} />
                             </div>
                         </React.Fragment>
                     ) : null}
