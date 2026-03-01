@@ -1034,14 +1034,21 @@ class MenuBar extends React.Component {
                     </div>
                 </div>
 
+                <div className={styles.accountInfoGroup}>
+                    <TWSaveStatus
+                        showSaveFilePicker={this.props.showSaveFilePicker}
+                    />
+                </div>
 
+                {aboutButton}
+            </Box>
 
-                    </div>
-                    {/* tw: add a main page button */}
+                                </div>
+                    {/* tw: TEST */}
                     <div className={styles.menuBarItem}>
                         <a
                             className={styles.feedbackLink}
-                            href="https://stormwindsky.github.io/StormWarp/"
+                            href="https://gamejolt.com/c/Stormwindsky-yk7ybk/stormwarp_feedback"
                             rel="noopener noreferrer"
                             target="_blank"
                         >
@@ -1049,7 +1056,7 @@ class MenuBar extends React.Component {
                             <Button className={styles.feedbackButton}>
                                 <FormattedMessage
                                     defaultMessage="{APP_NAME} Main Page"
-                                    description="Button to go main page in the menu bar"
+                                    description="Button to go on the main page in the menu bar"
                                     id="tw.feedbackButton"
                                     values={{
                                         APP_NAME
@@ -1059,14 +1066,6 @@ class MenuBar extends React.Component {
                         </a>
                     </div>
                 </div>
-
-
-
-
-
-
-
-
 
                 <div className={styles.accountInfoGroup}>
                     <TWSaveStatus
