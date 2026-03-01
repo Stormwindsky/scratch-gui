@@ -1042,39 +1042,6 @@ class MenuBar extends React.Component {
 
                 {aboutButton}
             </Box>
-
-                                </div>
-                    {/* tw: TEST */}
-                    <div className={styles.menuBarItem}>
-                        <a
-                            className={styles.feedbackLink}
-                            href="https://gamejolt.com/c/Stormwindsky-yk7ybk/stormwarp_feedback"
-                            rel="noopener noreferrer"
-                            target="_blank"
-                        >
-                            {/* todo: icon */}
-                            <Button className={styles.feedbackButton}>
-                                <FormattedMessage
-                                    defaultMessage="{APP_NAME} Main Page"
-                                    description="Button to go on the main page in the menu bar"
-                                    id="tw.feedbackButton"
-                                    values={{
-                                        APP_NAME
-                                    }}
-                                />
-                            </Button>
-                        </a>
-                    </div>
-                </div>
-
-                <div className={styles.accountInfoGroup}>
-                    <TWSaveStatus
-                        showSaveFilePicker={this.props.showSaveFilePicker}
-                    />
-                </div>
-
-                {aboutButton}
-            </Box>
         );
 
         return (
