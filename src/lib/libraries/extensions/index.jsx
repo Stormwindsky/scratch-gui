@@ -458,7 +458,7 @@ export const galleryLoading = {
 export const galleryMore = {
     name: (
         <FormattedMessage
-            defaultMessage="{APP_NAME} Extension Gallery"
+            defaultMessage="Turbowarp Extension Gallery"
             description="Name of extensions.turbowarp.org in extension library"
             id="tw.extensionGallery.name"
             values={{
@@ -495,7 +495,7 @@ export const galleryStorm = {
         />
     ),
     href: 'https://www.stormwindsky.com/Tools/Extensions%20Library%20(StormWarp).html',
-    extensionId: 'gallery',
+    extensionId: 'stormgallery',
     iconURL: galleryIcon,
     description: (
         <FormattedMessage
