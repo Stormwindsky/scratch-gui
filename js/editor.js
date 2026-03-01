@@ -49361,6 +49361,45 @@ if (_addons_channels__WEBPACK_IMPORTED_MODULE_23__["default"].changeChannel) {
   });
 }
 Object(_addons_entry__WEBPACK_IMPORTED_MODULE_25__["default"])();
+const getDynamicStudioId = () => {
+  const now = new Date();
+  const month = now.getMonth() + 1; // Janvier est 0
+  const day = now.getDate();
+
+  // --- DATES SPÉCIFIQUES ---
+
+  // Noël (25 Décembre)
+  if (month === 12 && day === 25) {
+    const ids = ['51004368', '1727765', '1776351', '187119'];
+    return ids[Math.floor(Math.random() * ids.length)];
+  }
+
+  // Halloween (31 Octobre)
+  if (month === 10 && day === 31) {
+    const ids = ['27821923', '263587', '4312387'];
+    return ids[Math.floor(Math.random() * ids.length)];
+  }
+
+  // 20 Mars
+  if (month === 3 && day === 20) {
+    const ids = ['29401013', '4985624', '35787684'];
+    return ids[Math.floor(Math.random() * ids.length)];
+  }
+
+  // 24 Avril
+  if (month === 4 && day === 24) {
+    return '25118761';
+  }
+
+  // 5 Mars
+  if (month === 3 && day === 5) {
+    return '27572045';
+  }
+
+  // --- CAS PAR DÉFAUT (Aléatoire à chaque rechargement) ---
+  const defaultIds = ['28715018', '146521', '16346', '154', '105751'];
+  return defaultIds[Math.floor(Math.random() * defaultIds.length)];
+};
 const Footer = () => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("footer", {
   className: _interface_css__WEBPACK_IMPORTED_MODULE_28___default.a.footer
 }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
@@ -49556,7 +49595,7 @@ class Interface extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Component {
     }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
       className: _interface_css__WEBPACK_IMPORTED_MODULE_28___default.a.section
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_components_tw_featured_projects_featured_projects_jsx__WEBPACK_IMPORTED_MODULE_18__["default"], {
-      studio: "105751"
+      studio: getDynamicStudioId()
     }))) : null), isHomepage && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Footer, null));
   }
 }
