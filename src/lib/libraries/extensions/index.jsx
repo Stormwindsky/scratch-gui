@@ -432,7 +432,7 @@ export default [
 export const galleryLoading = {
     name: (
         <FormattedMessage
-            defaultMessage="Turbowarp Extension Gallery"
+            defaultMessage="{APP_NAME} Extension Gallery"
             description="Name of extensions.turbowarp.org in extension library"
             id="tw.extensionGallery.name"
             values={{
@@ -458,7 +458,7 @@ export const galleryLoading = {
 export const galleryMore = {
     name: (
         <FormattedMessage
-            defaultMessage="Turbowarp Extension Gallery"
+            defaultMessage="{APP_NAME} Extension Gallery"
             description="Name of extensions.turbowarp.org in extension library"
             id="tw.extensionGallery.name"
             values={{
@@ -506,5 +506,3 @@ export const galleryError = {
     tags: ['tw'],
     featured: true
 };
-
-
