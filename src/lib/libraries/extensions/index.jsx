@@ -484,7 +484,7 @@ export const galleryMore = {
 export const galleryError = {
     name: (
         <FormattedMessage
-            defaultMessage="{APP_NAME} Extension Gallery"
+            defaultMessage="Turbowarp Extension Gallery"
             description="Name of extensions.turbowarp.org in extension library"
             id="tw.extensionGallery.name"
             values={{
