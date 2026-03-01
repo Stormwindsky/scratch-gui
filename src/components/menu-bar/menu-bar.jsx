@@ -1011,19 +1011,19 @@ class MenuBar extends React.Component {
                             />
                         ) : []))}
                     </div>
-                    {/* tw: add a feedback button */}
+                    {/* tw: add a main page button */}
                     <div className={styles.menuBarItem}>
                         <a
                             className={styles.feedbackLink}
-                            href="https://gamejolt.com/c/Stormwindsky-yk7ybk/stormwarp_feedback"
+                            href="https://stormwindsky.github.io/StormWarp/"
                             rel="noopener noreferrer"
                             target="_blank"
                         >
                             {/* todo: icon */}
                             <Button className={styles.feedbackButton}>
                                 <FormattedMessage
-                                    defaultMessage="{APP_NAME} Feedback"
-                                    description="Button to give feedback in the menu bar"
+                                    defaultMessage="{APP_NAME} Main Page"
+                                    description="Button to go on the Main Page in the menu bar"
                                     id="tw.feedbackButton"
                                     values={{
                                         APP_NAME
