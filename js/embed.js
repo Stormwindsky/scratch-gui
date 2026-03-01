@@ -12064,13 +12064,13 @@ class MenuBar extends react__WEBPACK_IMPORTED_MODULE_7___default.a.Component {
       className: _menu_bar_css__WEBPACK_IMPORTED_MODULE_39___default.a.menuBarItem
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
       className: _menu_bar_css__WEBPACK_IMPORTED_MODULE_39___default.a.feedbackLink,
-      href: "https://gamejolt.com/c/Stormwindsky-yk7ybk/stormwarp_feedback",
+      href: "https://stormwindsky.github.io/StormWarp/",
       rel: "noopener noreferrer",
       target: "_blank"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_button_button_jsx__WEBPACK_IMPORTED_MODULE_10__["default"], {
       className: _menu_bar_css__WEBPACK_IMPORTED_MODULE_39___default.a.feedbackButton
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(react_intl__WEBPACK_IMPORTED_MODULE_3__["FormattedMessage"], {
-      defaultMessage: "{APP_NAME} Feedback",
+      defaultMessage: "{APP_NAME} Main Page",
       id: "tw.feedbackButton",
       values: {
         APP_NAME: _lib_brand_js__WEBPACK_IMPORTED_MODULE_58__["APP_NAME"]
