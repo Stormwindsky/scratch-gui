@@ -1,0 +1,90 @@
+name: Update Sounds Library (MD5 Edition)
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * *'
+
+jobs:
+  update-json:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout scratch-gui
+        uses: actions/checkout@v4
+        with:
+          repository: 'Stormwindsky/scratch-gui'
+          ref: 'develop'
+          token: ${{ secrets.PAT_TOKEN }}
+
+      - name: Fetch, Hash and Update JSON
+        shell: python
+        run: |
+          import json
+          import requests
+          import hashlib
+          import os
+
+          # Sources des fichiers .wav
+          sources = [
+              "https://api.github.com/repos/Stormwindsky/OeuvreLibre/contents/ArtLibre/ArtLibre/files",
+              "https://api.github.com/repos/Stormwindsky/Assets-under-license-CC0-1.0-for-StormWarp/contents/Assets"
+          ]
+          
+          json_path = "src/lib/libraries/sounds.json"
+          
+          # 1. Charger le JSON existant
+          if os.path.exists(json_path):
+              with open(json_path, 'r', encoding='utf-8') as f:
+                  sounds_data = json.load(f)
+          else:
+              sounds_data = []
+
+          existing_md5s = {s['md5ext'] for s in sounds_data}
+          new_entries_count = 0
+
+          # 2. Scanner les dépôts
+          for api_url in sources:
+              print(f"Checking source: {api_url}")
+              resp = requests.get(api_url)
+              if resp.status_code != 200:
+                  continue
+              
+              items = resp.json()
+              for item in items:
+                  if item['name'].endswith('.wav'):
+                      download_url = item['download_url']
+                      
+                      # Télécharger le contenu pour calculer le MD5
+                      file_content = requests.get(download_url).content
+                      file_hash = hashlib.md5(file_content).hexdigest()
+                      md5ext = f"{file_hash}.wav"
+
+                      # Si ce MD5 n'est pas déjà dans la liste
+                      if md5ext not in existing_md5s:
+                          print(f"Adding new sound: {item['name']} -> {md5ext}")
+                          sounds_data.append({
+                              "name": item['name'].replace('.wav', ''),
+                              "md5ext": md5ext,
+                              "sampleCount": 0, 
+                              "rate": 44100,
+                              "format": "",
+                              "tags": ["library"]
+                          })
+                          existing_md5s.add(md5ext)
+                          new_entries_count += 1
+
+          # 3. Sauvegarder si des changements ont eu lieu
+          if new_entries_count > 0:
+              with open(json_path, 'w', encoding='utf-8') as f:
+                  json.dump(sounds_data, f, indent=4, ensure_ascii=False)
+              print(f"Finished! Added {new_entries_count} sounds.")
+          else:
+              print("No new sounds found.")
+
+      - name: Commit and Push
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add src/lib/libraries/sounds.json
+          # On ne commit que s'il y a des modifs
+          git diff --quiet && git diff --staged --quiet || (git commit -m "feat: auto-add new sounds with MD5" && git push)
