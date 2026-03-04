@@ -1856,7 +1856,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
  *
  * All rights reserved.
  *
- * Date: Tue May 13 18:09:53 2025 -0500
+ * Date: Tue Mar 3 19:49:10 2026 -0600
  *
  ***
  *
@@ -6685,43 +6685,7 @@ new function() {
 		}
 		return this;
 	}
-}), {
-	tween: function(from, to, options) {
-		if (!options) {
-			options = to;
-			to = from;
-			from = null;
-			if (!options) {
-				options = to;
-				to = null;
-			}
-		}
-		var easing = options && options.easing,
-			start = options && options.start,
-			duration = options != null && (
-				typeof options === 'number' ? options : options.duration
-			),
-			tween = new Tween(this, from, to, duration, easing, start);
-		function onFrame(event) {
-			tween._handleFrame(event.time * 1000);
-			if (!tween.running) {
-				this.off('frame', onFrame);
-			}
-		}
-		if (duration) {
-			this.on('frame', onFrame);
-		}
-		return tween;
-	},
-
-	tweenTo: function(to, options) {
-		return this.tween(null, to, options);
-	},
-
-	tweenFrom: function(from, options) {
-		return this.tween(from, null, options);
-	}
-});
+}));
 
 var Group = Item.extend({
 	_class: 'Group',
@@ -7380,7 +7344,7 @@ var Raster = Item.extend({
 			crossOrigin = this._crossOrigin;
 		if (crossOrigin)
 			image.crossOrigin = crossOrigin;
-		if (src)
+		if (src && typeof src === 'string' && /^data:/i.test(src))
 			image.src = src;
 		this.setImage(image);
 	},
@@ -15939,245 +15903,6 @@ var Tool = PaperScopeItem.extend({
 		return called;
 	}
 
-});
-
-var Tween = Base.extend(Emitter, {
-	_class: 'Tween',
-
-	statics: {
-		easings: {
-			linear: function(t) {
-				return t;
-			},
-
-			easeInQuad: function(t) {
-				return t * t;
-			},
-
-			easeOutQuad: function(t) {
-				return t * (2 - t);
-			},
-
-			easeInOutQuad: function(t) {
-				return t < 0.5
-					? 2 * t * t
-					: -1 + 2 * (2 - t) * t;
-			},
-
-			easeInCubic: function(t) {
-				return t * t * t;
-			},
-
-			easeOutCubic: function(t) {
-				return --t * t * t + 1;
-			},
-
-			easeInOutCubic: function(t) {
-				return t < 0.5
-					? 4 * t * t * t
-					: (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
-			},
-
-			easeInQuart: function(t) {
-				return t * t * t * t;
-			},
-
-			easeOutQuart: function(t) {
-				return 1 - (--t) * t * t * t;
-			},
-
-			easeInOutQuart: function(t) {
-				return t < 0.5
-					? 8 * t * t * t * t
-					: 1 - 8 * (--t) * t * t * t;
-			},
-
-			easeInQuint: function(t) {
-				return t * t * t * t * t;
-			},
-
-			easeOutQuint: function(t) {
-				return 1 + --t * t * t * t * t;
-			},
-
-			easeInOutQuint: function(t) {
-				return t < 0.5
-					? 16 * t * t * t * t * t
-					: 1 + 16 * (--t) * t * t * t * t;
-			}
-		}
-	},
-
-	initialize: function Tween(object, from, to, duration, easing, start) {
-		this.object = object;
-		var type = typeof easing;
-		var isFunction = type === 'function';
-		this.type = isFunction
-			? type
-			: type === 'string'
-				? easing
-				: 'linear';
-		this.easing = isFunction ? easing : Tween.easings[this.type];
-		this.duration = duration;
-		this.running = false;
-
-		this._then = null;
-		this._startTime = null;
-		var state = from || to;
-		this._keys = state ? Object.keys(state) : [];
-		this._parsedKeys = this._parseKeys(this._keys);
-		this._from = state && this._getState(from);
-		this._to = state && this._getState(to);
-		if (start !== false) {
-			this.start();
-		}
-	},
-
-	then: function(then) {
-		this._then = then;
-		return this;
-	},
-
-	start: function() {
-		this._startTime = null;
-		this.running = true;
-		return this;
-	},
-
-	stop: function() {
-		this.running = false;
-		return this;
-	},
-
-	update: function(progress) {
-		if (this.running) {
-			if (progress > 1) {
-				progress = 1;
-				this.running = false;
-			}
-
-			var factor = this.easing(progress),
-				keys = this._keys,
-				getValue = function(value) {
-					return typeof value === 'function'
-						? value(factor, progress)
-						: value;
-				};
-			for (var i = 0, l = keys && keys.length; i < l; i++) {
-				var key = keys[i],
-					from = getValue(this._from[key]),
-					to = getValue(this._to[key]),
-					value = (from && to && from.__add && to.__add)
-						? to.__subtract(from).__multiply(factor).__add(from)
-						: ((to - from) * factor) + from;
-				this._setProperty(this._parsedKeys[key], value);
-			}
-
-			if (!this.running && this._then) {
-				this._then(this.object);
-			}
-			if (this.responds('update')) {
-				this.emit('update', new Base({
-					progress: progress,
-					factor: factor
-				}));
-			}
-		}
-		return this;
-	},
-
-	_events: {
-		onUpdate: {}
-	},
-
-	_handleFrame: function(time) {
-		var startTime = this._startTime,
-			progress = startTime
-				? (time - startTime) / this.duration
-				: 0;
-		if (!startTime) {
-			this._startTime = time;
-		}
-		this.update(progress);
-	},
-
-	_getState: function(state) {
-		var keys = this._keys,
-			result = {};
-		for (var i = 0, l = keys.length; i < l; i++) {
-			var key = keys[i],
-				path = this._parsedKeys[key],
-				current = this._getProperty(path),
-				value;
-			if (state) {
-				var resolved = this._resolveValue(current, state[key]);
-				this._setProperty(path, resolved);
-				value = this._getProperty(path);
-				value = value && value.clone ? value.clone() : value;
-				this._setProperty(path, current);
-			} else {
-				value = current && current.clone ? current.clone() : current;
-			}
-			result[key] = value;
-		}
-		return result;
-	},
-
-	_resolveValue: function(current, value) {
-		if (value) {
-			if (Array.isArray(value) && value.length === 2) {
-				var operator = value[0];
-				return (
-					operator &&
-					operator.match &&
-					operator.match(/^[+\-\*\/]=/)
-				)
-					? this._calculate(current, operator[0], value[1])
-					: value;
-			} else if (typeof value === 'string') {
-				var match = value.match(/^[+\-*/]=(.*)/);
-				if (match) {
-					var parsed = JSON.parse(match[1].replace(
-						/(['"])?([a-zA-Z0-9_]+)(['"])?:/g,
-						'"$2": '
-					));
-					return this._calculate(current, value[0], parsed);
-				}
-			}
-		}
-		return value;
-	},
-
-	_calculate: function(left, operator, right) {
-		return paper.PaperScript.calculateBinary(left, operator, right);
-	},
-
-	_parseKeys: function(keys) {
-		var parsed = {};
-		for (var i = 0, l = keys.length; i < l; i++) {
-			var key = keys[i],
-				path = key
-					.replace(/\.([^.]*)/g, '/$1')
-					.replace(/\[['"]?([^'"\]]*)['"]?\]/g, '/$1');
-			parsed[key] = path.split('/');
-		}
-		return parsed;
-	},
-
-	_getProperty: function(path, offset) {
-		var obj = this.object;
-		for (var i = 0, l = path.length - (offset || 0); i < l && obj; i++) {
-			obj = obj[path[i]];
-		}
-		return obj;
-	},
-
-	_setProperty: function(path, value) {
-		var dest = this._getProperty(path, 1);
-		if (dest) {
-			dest[path[path.length - 1]] = value;
-		}
-	}
 });
 
 var CanvasProvider = {
