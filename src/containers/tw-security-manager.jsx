@@ -33,6 +33,7 @@ const isTrustedExtension = url => (
     url.startsWith('https://extensions.penguinmod.com/') ||
     url.startsWith('https://sharkpools-extensions.vercel.app/') ||
     url.startsWith('https://cdn.jsdelivr.net/gh/Stormwindsky/My-Extension-Blocks-under-license-CC0-1.0-for-Turbowarp@main/List/') ||
+    url.startsWith('https://ccw-user-extension.ccw.site/extensions/') ||
 
     // For development.
     url.startsWith('http://localhost:8000/') ||
