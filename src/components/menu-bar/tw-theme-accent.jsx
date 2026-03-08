@@ -36,11 +36,16 @@ const options = defineMessages({
         description: 'Name of color scheme that uses a rainbow.',
         id: 'tw.accent.rainbow'
     },
-    // Added Yellow option below
     [ACCENT_YELLOW]: {
         defaultMessage: 'Yellow',
         description: 'Name of the yellow color scheme.',
         id: 'tw.accent.yellow'
+    },
+    // Added Green option below
+    [ACCENT_GREEN]: {
+        defaultMessage: 'Green',
+        description: 'Name of the green color scheme.',
+        id: 'tw.accent.green'
     }
 });
 
