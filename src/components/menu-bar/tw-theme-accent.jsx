@@ -30,6 +30,7 @@ const options = defineMessages({
         defaultMessage: 'Blue',
         description: 'Name of the blue color scheme. Matches Scratch before the high contrast update.',
         id: 'tw.accent.blue'
+        
     },
     [ACCENT_RAINBOW]: {
         defaultMessage: 'Rainbow',
