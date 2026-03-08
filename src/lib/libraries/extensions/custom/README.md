@@ -26,3 +26,9 @@ LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
 OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 ```
+
+## Background attribution
+
+## custom.svg
+
+Background image from https://opengameart.org/content/creating-space-baackgrounds-vectors under the CC0 1.0 License
