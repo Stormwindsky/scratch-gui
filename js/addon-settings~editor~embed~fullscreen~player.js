@@ -375,6 +375,49 @@ const blockColors = {};
 
 /***/ }),
 
+/***/ "./src/lib/themes/accent/green.js":
+/*!****************************************!*\
+  !*** ./src/lib/themes/accent/green.js ***!
+  \****************************************/
+/*! exports provided: guiColors, blockColors */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "guiColors", function() { return guiColors; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "blockColors", function() { return blockColors; });
+// Green Theme Configuration
+const guiColors = {
+  // Motion (Green version)
+  'motion-primary': '#78C257',
+  // Vert équilibré
+  'motion-primary-transparent': '#78C257E6',
+  'motion-tertiary': '#5A9141',
+  // Vert légèrement plus soutenu pour la profondeur
+
+  // Looks (Green version)
+  'looks-secondary': '#78C257',
+  'looks-transparent': '#78C25759',
+  'looks-light-transparent': '#78C25726',
+  'looks-secondary-dark': 'hsla(105, 35%, 35%, 1)',
+  // Vert olive profond
+
+  // Extensions (Green version)
+  'extensions-primary': 'hsla(105, 40%, 55%, 1)',
+  'extensions-tertiary': 'hsla(105, 40%, 30%, 1)',
+  'extensions-transparent': 'hsla(105, 40%, 55%, 0.35)',
+  'extensions-light': 'hsla(105, 60%, 90%, 1)',
+  // Drop Highlight
+  'drop-highlight': '#C8E6C9' // Vert très pâle pour le surlignage
+};
+const blockColors = {
+  checkboxActiveBackground: '#78C257',
+  checkboxActiveBorder: '#5A9141'
+};
+
+
+/***/ }),
+
 /***/ "./src/lib/themes/accent/purple.js":
 /*!*****************************************!*\
   !*** ./src/lib/themes/accent/purple.js ***!
@@ -1302,7 +1345,7 @@ const applyGuiColors = theme => {
 /*!*********************************!*\
   !*** ./src/lib/themes/index.js ***!
   \*********************************/
-/*! exports provided: Theme, defaultBlockColors, ACCENT_RED, ACCENT_PURPLE, ACCENT_BLUE, ACCENT_RAINBOW, ACCENT_YELLOW, ACCENT_MAP, GUI_LIGHT, GUI_DARK, GUI_MAP, BLOCKS_THREE, BLOCKS_DARK, BLOCKS_HIGH_CONTRAST, BLOCKS_CUSTOM, BLOCKS_MAP */
+/*! exports provided: Theme, defaultBlockColors, ACCENT_RED, ACCENT_PURPLE, ACCENT_BLUE, ACCENT_RAINBOW, ACCENT_YELLOW, ACCENT_GREEN, ACCENT_MAP, GUI_LIGHT, GUI_DARK, GUI_MAP, BLOCKS_THREE, BLOCKS_DARK, BLOCKS_HIGH_CONTRAST, BLOCKS_CUSTOM, BLOCKS_MAP */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1314,6 +1357,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ACCENT_BLUE", function() { return ACCENT_BLUE; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ACCENT_RAINBOW", function() { return ACCENT_RAINBOW; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ACCENT_YELLOW", function() { return ACCENT_YELLOW; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ACCENT_GREEN", function() { return ACCENT_GREEN; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ACCENT_MAP", function() { return ACCENT_MAP; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GUI_LIGHT", function() { return GUI_LIGHT; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GUI_DARK", function() { return GUI_DARK; });
@@ -1330,11 +1374,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _accent_red__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./accent/red */ "./src/lib/themes/accent/red.js");
 /* harmony import */ var _accent_rainbow__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./accent/rainbow */ "./src/lib/themes/accent/rainbow.js");
 /* harmony import */ var _accent_yellow__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./accent/yellow */ "./src/lib/themes/accent/yellow.js");
-/* harmony import */ var _gui_light__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./gui/light */ "./src/lib/themes/gui/light.js");
-/* harmony import */ var _gui_dark__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./gui/dark */ "./src/lib/themes/gui/dark.js");
-/* harmony import */ var _blocks_three__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./blocks/three */ "./src/lib/themes/blocks/three.js");
-/* harmony import */ var _blocks_high_contrast__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./blocks/high-contrast */ "./src/lib/themes/blocks/high-contrast.js");
-/* harmony import */ var _blocks_dark__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./blocks/dark */ "./src/lib/themes/blocks/dark.js");
+/* harmony import */ var _accent_green__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./accent/green */ "./src/lib/themes/accent/green.js");
+/* harmony import */ var _gui_light__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./gui/light */ "./src/lib/themes/gui/light.js");
+/* harmony import */ var _gui_dark__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./gui/dark */ "./src/lib/themes/gui/dark.js");
+/* harmony import */ var _blocks_three__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./blocks/three */ "./src/lib/themes/blocks/three.js");
+/* harmony import */ var _blocks_high_contrast__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./blocks/high-contrast */ "./src/lib/themes/blocks/high-contrast.js");
+/* harmony import */ var _blocks_dark__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./blocks/dark */ "./src/lib/themes/blocks/dark.js");
 var _Theme;
 function _defineProperty(e, r, t) { return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = t, e; }
 function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == typeof i ? i : i + ""; }
@@ -1344,7 +1389,7 @@ function _toPrimitive(t, r) { if ("object" != typeof t || !t) return t; var e = 
 
 
 
- // Added Yellow accent
+
 
 
 
@@ -1355,14 +1400,15 @@ const ACCENT_PURPLE = 'purple';
 const ACCENT_BLUE = 'blue';
 const ACCENT_RED = 'red';
 const ACCENT_RAINBOW = 'rainbow';
-const ACCENT_YELLOW = 'yellow'; // Added Yellow constant
-
+const ACCENT_YELLOW = 'yellow';
+const ACCENT_GREEN = 'green';
 const ACCENT_MAP = {
   [ACCENT_PURPLE]: _accent_purple__WEBPACK_IMPORTED_MODULE_1__,
   [ACCENT_BLUE]: _accent_blue__WEBPACK_IMPORTED_MODULE_2__,
   [ACCENT_RED]: _accent_red__WEBPACK_IMPORTED_MODULE_3__,
   [ACCENT_RAINBOW]: _accent_rainbow__WEBPACK_IMPORTED_MODULE_4__,
-  [ACCENT_YELLOW]: _accent_yellow__WEBPACK_IMPORTED_MODULE_5__ // Added Yellow to the map
+  [ACCENT_YELLOW]: _accent_yellow__WEBPACK_IMPORTED_MODULE_5__,
+  [ACCENT_GREEN]: _accent_green__WEBPACK_IMPORTED_MODULE_6__
 };
 
 // Set Yellow as the default accent theme
@@ -1370,8 +1416,8 @@ const ACCENT_DEFAULT = ACCENT_YELLOW;
 const GUI_LIGHT = 'light';
 const GUI_DARK = 'dark';
 const GUI_MAP = {
-  [GUI_LIGHT]: _gui_light__WEBPACK_IMPORTED_MODULE_6__,
-  [GUI_DARK]: _gui_dark__WEBPACK_IMPORTED_MODULE_7__
+  [GUI_LIGHT]: _gui_light__WEBPACK_IMPORTED_MODULE_7__,
+  [GUI_DARK]: _gui_dark__WEBPACK_IMPORTED_MODULE_8__
 };
 const GUI_DEFAULT = GUI_LIGHT;
 const BLOCKS_THREE = 'three';
@@ -1379,33 +1425,33 @@ const BLOCKS_DARK = 'dark';
 const BLOCKS_HIGH_CONTRAST = 'high-contrast';
 const BLOCKS_CUSTOM = 'custom';
 const BLOCKS_DEFAULT = BLOCKS_THREE;
-const defaultBlockColors = _blocks_three__WEBPACK_IMPORTED_MODULE_8__["blockColors"];
+const defaultBlockColors = _blocks_three__WEBPACK_IMPORTED_MODULE_9__["blockColors"];
 const BLOCKS_MAP = {
   [BLOCKS_THREE]: {
     blocksMediaFolder: 'blocks-media/default',
-    colors: _blocks_three__WEBPACK_IMPORTED_MODULE_8__["blockColors"],
-    extensions: _blocks_three__WEBPACK_IMPORTED_MODULE_8__["extensions"],
+    colors: _blocks_three__WEBPACK_IMPORTED_MODULE_9__["blockColors"],
+    extensions: _blocks_three__WEBPACK_IMPORTED_MODULE_9__["extensions"],
     customExtensionColors: {},
     useForStage: true
   },
   [BLOCKS_HIGH_CONTRAST]: {
     blocksMediaFolder: 'blocks-media/high-contrast',
-    colors: lodash_defaultsdeep__WEBPACK_IMPORTED_MODULE_0___default()({}, _blocks_high_contrast__WEBPACK_IMPORTED_MODULE_9__["blockColors"], defaultBlockColors),
-    extensions: _blocks_high_contrast__WEBPACK_IMPORTED_MODULE_9__["extensions"],
-    customExtensionColors: _blocks_high_contrast__WEBPACK_IMPORTED_MODULE_9__["customExtensionColors"],
+    colors: lodash_defaultsdeep__WEBPACK_IMPORTED_MODULE_0___default()({}, _blocks_high_contrast__WEBPACK_IMPORTED_MODULE_10__["blockColors"], defaultBlockColors),
+    extensions: _blocks_high_contrast__WEBPACK_IMPORTED_MODULE_10__["extensions"],
+    customExtensionColors: _blocks_high_contrast__WEBPACK_IMPORTED_MODULE_10__["customExtensionColors"],
     useForStage: true
   },
   [BLOCKS_DARK]: {
     blocksMediaFolder: 'blocks-media/default',
-    colors: lodash_defaultsdeep__WEBPACK_IMPORTED_MODULE_0___default()({}, _blocks_dark__WEBPACK_IMPORTED_MODULE_10__["blockColors"], defaultBlockColors),
-    extensions: _blocks_dark__WEBPACK_IMPORTED_MODULE_10__["extensions"],
-    customExtensionColors: _blocks_dark__WEBPACK_IMPORTED_MODULE_10__["customExtensionColors"],
+    colors: lodash_defaultsdeep__WEBPACK_IMPORTED_MODULE_0___default()({}, _blocks_dark__WEBPACK_IMPORTED_MODULE_11__["blockColors"], defaultBlockColors),
+    extensions: _blocks_dark__WEBPACK_IMPORTED_MODULE_11__["extensions"],
+    customExtensionColors: _blocks_dark__WEBPACK_IMPORTED_MODULE_11__["customExtensionColors"],
     useForStage: false
   },
   [BLOCKS_CUSTOM]: {
     // to be filled by editor-theme3 addon
     blocksMediaFolder: 'blocks-media/default',
-    colors: _blocks_three__WEBPACK_IMPORTED_MODULE_8__["blockColors"],
+    colors: _blocks_three__WEBPACK_IMPORTED_MODULE_9__["blockColors"],
     extensions: {},
     customExtensionColors: {},
     useForStage: false
@@ -1438,7 +1484,7 @@ class Theme {
     return BLOCKS_MAP[this.blocks].blocksMediaFolder;
   }
   getGuiColors() {
-    return lodash_defaultsdeep__WEBPACK_IMPORTED_MODULE_0___default()({}, ACCENT_MAP[this.accent].guiColors, GUI_MAP[this.gui].guiColors, _gui_light__WEBPACK_IMPORTED_MODULE_6__["guiColors"]);
+    return lodash_defaultsdeep__WEBPACK_IMPORTED_MODULE_0___default()({}, ACCENT_MAP[this.accent].guiColors, GUI_MAP[this.gui].guiColors, _gui_light__WEBPACK_IMPORTED_MODULE_7__["guiColors"]);
   }
   getBlockColors() {
     return lodash_defaultsdeep__WEBPACK_IMPORTED_MODULE_0___default()({}, ACCENT_MAP[this.accent].blockColors, GUI_MAP[this.gui].blockColors, BLOCKS_MAP[this.blocks].colors);
