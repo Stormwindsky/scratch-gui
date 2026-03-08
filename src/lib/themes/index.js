@@ -17,14 +17,16 @@ const ACCENT_PURPLE = 'purple';
 const ACCENT_BLUE = 'blue';
 const ACCENT_RED = 'red';
 const ACCENT_RAINBOW = 'rainbow';
-const ACCENT_YELLOW = 'yellow'; // Added Yellow constant
+const ACCENT_YELLOW = 'yellow';
+const ACCENT_YELLOW = 'green';
 
 const ACCENT_MAP = {
     [ACCENT_PURPLE]: accentPurple,
     [ACCENT_BLUE]: accentBlue,
     [ACCENT_RED]: accentRed,
     [ACCENT_RAINBOW]: accentRainbow,
-    [ACCENT_YELLOW]: accentYellow // Added Yellow to the map
+    [ACCENT_YELLOW]: accentYellow,
+    [ACCENT_GREEN]: accentGreen
 };
 
 // Set Yellow as the default accent theme
@@ -156,7 +158,8 @@ export {
     ACCENT_PURPLE,
     ACCENT_BLUE,
     ACCENT_RAINBOW,
-    ACCENT_YELLOW, // Exported Yellow
+    ACCENT_YELLOW,
+    ACCENT_GREEN,
     ACCENT_MAP,
 
     GUI_LIGHT,
