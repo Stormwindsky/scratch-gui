@@ -4,7 +4,8 @@ import * as accentPurple from './accent/purple';
 import * as accentBlue from './accent/blue';
 import * as accentRed from './accent/red';
 import * as accentRainbow from './accent/rainbow';
-import * as accentYellow from './accent/yellow'; // Added Yellow accent
+import * as accentYellow from './accent/yellow';
+import * as accentYellow from './accent/green';
 
 import * as guiLight from './gui/light';
 import * as guiDark from './gui/dark';
@@ -18,7 +19,7 @@ const ACCENT_BLUE = 'blue';
 const ACCENT_RED = 'red';
 const ACCENT_RAINBOW = 'rainbow';
 const ACCENT_YELLOW = 'yellow';
-const ACCENT_YELLOW = 'green';
+const ACCENT_GREEN = 'green';
 
 const ACCENT_MAP = {
     [ACCENT_PURPLE]: accentPurple,
