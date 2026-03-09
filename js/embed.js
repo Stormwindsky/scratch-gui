@@ -3648,7 +3648,7 @@ module.exports = "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGlu
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "static/assets/78e3f697df85275aa8d384ca6fc0e288.svg";
+module.exports = __webpack_require__.p + "static/assets/6450c84eedce3ec5b895a7056eec5697.svg";
 
 /***/ }),
 
