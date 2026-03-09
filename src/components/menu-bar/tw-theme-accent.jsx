@@ -41,11 +41,17 @@ const options = defineMessages({
         description: 'Name of the yellow color scheme.',
         id: 'tw.accent.yellow'
     },
-    // Added Green option below
     [ACCENT_GREEN]: {
         defaultMessage: 'Green',
         description: 'Name of the green color scheme.',
         id: 'tw.accent.green'
+    },
+    
+    // Added bisesexual theme option below
+    [ACCENT_BIESEXUAL]: {
+        defaultMessage: 'Biesexual',
+        description: 'Theme of the flag biesexual.',
+        id: 'tw.accent.biesexual'
     }
 });
 
