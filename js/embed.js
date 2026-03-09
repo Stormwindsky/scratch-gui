@@ -13292,7 +13292,7 @@ const options = Object(react_intl__WEBPACK_IMPORTED_MODULE_3__["defineMessages"]
     "defaultMessage": "Green"
   },
   // Added bisesexual theme option below
-  [ACCENT_BIESEXUAL]: {
+  [_lib_themes_index_js__WEBPACK_IMPORTED_MODULE_8__["ACCENT_BIESEXUAL"]]: {
     "id": "tw.accent.biesexual",
     "defaultMessage": "Biesexual"
   }
