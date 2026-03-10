@@ -3659,7 +3659,7 @@ module.exports = __webpack_require__.p + "static/assets/6450c84eedce3ec5b895a705
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "static/assets/00aa0c4320b93631ab3c223604ead431.svg";
+module.exports = __webpack_require__.p + "static/assets/0ec577a4fbaedfe87a45dc0bed413b34.svg";
 
 /***/ }),
 
