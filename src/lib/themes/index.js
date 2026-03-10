@@ -6,7 +6,7 @@ import * as accentRed from './accent/red';
 import * as accentRainbow from './accent/rainbow';
 import * as accentYellow from './accent/yellow';
 import * as accentGreen from './accent/green';
-import * as accentBiesexual from './accent/bisexual';
+import * as accentBisexual from './accent/bisexual';
 
 import * as guiLight from './gui/light';
 import * as guiDark from './gui/dark';
