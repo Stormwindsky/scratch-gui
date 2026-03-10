@@ -506,3 +506,53 @@ export const galleryError = {
     tags: ['tw'],
     featured: true
 };
+
+// --- Added for StormWarp Extension Gallery ---
+
+export const stormWarpGalleryLoading = {
+    name: 'StormWarp Extension Gallery',
+    href: 'https://www.stormwindsky.com/Tools/Extensions%20Library%20(StormWarp).html',
+    extensionId: 'stormwarp_gallery',
+    iconURL: galleryIcon,
+    description: (
+        <FormattedMessage
+            defaultMessage="Loading StormWarp extension gallery..."
+            description="Appears while loading extension list from the StormWarp extension gallery"
+            id="sw.extensionGallery.loading"
+        />
+    ),
+    tags: ['sw'],
+    featured: true
+};
+
+export const stormWarpGalleryMore = {
+    name: 'StormWarp Extension Gallery',
+    href: 'https://www.stormwindsky.com/Tools/Extensions%20Library%20(StormWarp).html',
+    extensionId: 'stormwarp_gallery',
+    iconURL: galleryIcon,
+    description: (
+        <FormattedMessage
+            defaultMessage="Learn more about extensions at stormwindsky.com."
+            description="Appears after the extension list from the StormWarp gallery was loaded successfully"
+            id="sw.extensionGallery.more"
+        />
+    ),
+    tags: ['sw'],
+    featured: true
+};
+
+export const stormWarpGalleryError = {
+    name: 'StormWarp Extension Gallery',
+    href: 'https://www.stormwindsky.com/Tools/Extensions%20Library%20(StormWarp).html',
+    extensionId: 'stormwarp_gallery',
+    iconURL: galleryIcon,
+    description: (
+        <FormattedMessage
+            defaultMessage="Error loading StormWarp extension gallery. Visit stormwindsky.com to find more extensions."
+            description="Appears when an error occurred loading extension list from the StormWarp extension gallery"
+            id="sw.extensionGallery.error"
+        />
+    ),
+    tags: ['sw'],
+    featured: true
+};
