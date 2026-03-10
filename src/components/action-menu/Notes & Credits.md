@@ -9,3 +9,7 @@ The icon, icon--surprise.svg is from svgrepo.com under license CC0 1.0 & edited 
 Here:
 
 https://www.svgrepo.com/svg/530246/gift
+
+The the icon named, icon--paint.svg is from svgrepo.com & under license CC0 1.0
+
+Here: https://www.svgrepo.com/svg/143976/paintbrush
