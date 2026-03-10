@@ -4799,7 +4799,7 @@ module.exports = "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGlu
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "static/assets/a11919e102077f40302da55fb9150440.svg";
+module.exports = __webpack_require__.p + "static/assets/9fef8a4fa40d6b11b7adcc771c9fc2d3.svg";
 
 /***/ }),
 
