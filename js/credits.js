@@ -240,10 +240,10 @@ module.exports = {
 
 /***/ }),
 
-/***/ "./src/lib/themes/accent/biesexual.js":
-/*!********************************************!*\
-  !*** ./src/lib/themes/accent/biesexual.js ***!
-  \********************************************/
+/***/ "./src/lib/themes/accent/bisexual.js":
+/*!*******************************************!*\
+  !*** ./src/lib/themes/accent/bisexual.js ***!
+  \*******************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1273,7 +1273,7 @@ const applyGuiColors = theme => {
 /*!*********************************!*\
   !*** ./src/lib/themes/index.js ***!
   \*********************************/
-/*! exports provided: Theme, defaultBlockColors, ACCENT_RED, ACCENT_PURPLE, ACCENT_BLUE, ACCENT_RAINBOW, ACCENT_YELLOW, ACCENT_GREEN, ACCENT_BIESEXUAL, ACCENT_MAP, GUI_LIGHT, GUI_DARK, GUI_MAP, BLOCKS_THREE, BLOCKS_DARK, BLOCKS_HIGH_CONTRAST, BLOCKS_CUSTOM, BLOCKS_MAP */
+/*! exports provided: Theme, defaultBlockColors, ACCENT_RED, ACCENT_PURPLE, ACCENT_BLUE, ACCENT_RAINBOW, ACCENT_YELLOW, ACCENT_GREEN, ACCENT_BISEXUAL, ACCENT_MAP, GUI_LIGHT, GUI_DARK, GUI_MAP, BLOCKS_THREE, BLOCKS_DARK, BLOCKS_HIGH_CONTRAST, BLOCKS_CUSTOM, BLOCKS_MAP */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1286,7 +1286,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ACCENT_RAINBOW", function() { return ACCENT_RAINBOW; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ACCENT_YELLOW", function() { return ACCENT_YELLOW; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ACCENT_GREEN", function() { return ACCENT_GREEN; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ACCENT_BIESEXUAL", function() { return ACCENT_BIESEXUAL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ACCENT_BISEXUAL", function() { return ACCENT_BISEXUAL; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ACCENT_MAP", function() { return ACCENT_MAP; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GUI_LIGHT", function() { return GUI_LIGHT; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GUI_DARK", function() { return GUI_DARK; });
@@ -1304,7 +1304,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _accent_rainbow__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./accent/rainbow */ "./src/lib/themes/accent/rainbow.js");
 /* harmony import */ var _accent_yellow__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./accent/yellow */ "./src/lib/themes/accent/yellow.js");
 /* harmony import */ var _accent_green__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./accent/green */ "./src/lib/themes/accent/green.js");
-/* harmony import */ var _accent_biesexual__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./accent/biesexual */ "./src/lib/themes/accent/biesexual.js");
+/* harmony import */ var _accent_bisexual__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./accent/bisexual */ "./src/lib/themes/accent/bisexual.js");
 /* harmony import */ var _gui_light__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./gui/light */ "./src/lib/themes/gui/light.js");
 /* harmony import */ var _gui_dark__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./gui/dark */ "./src/lib/themes/gui/dark.js");
 /* harmony import */ var _blocks_three__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./blocks/three */ "./src/lib/themes/blocks/three.js");
@@ -1333,7 +1333,7 @@ const ACCENT_RED = 'red';
 const ACCENT_RAINBOW = 'rainbow';
 const ACCENT_YELLOW = 'yellow';
 const ACCENT_GREEN = 'green';
-const ACCENT_BIESEXUAL = 'biesexual';
+const ACCENT_BISEXUAL = 'bisexual';
 const ACCENT_MAP = {
   [ACCENT_PURPLE]: _accent_purple__WEBPACK_IMPORTED_MODULE_1__,
   [ACCENT_BLUE]: _accent_blue__WEBPACK_IMPORTED_MODULE_2__,
@@ -1341,7 +1341,7 @@ const ACCENT_MAP = {
   [ACCENT_RAINBOW]: _accent_rainbow__WEBPACK_IMPORTED_MODULE_4__,
   [ACCENT_YELLOW]: _accent_yellow__WEBPACK_IMPORTED_MODULE_5__,
   [ACCENT_GREEN]: _accent_green__WEBPACK_IMPORTED_MODULE_6__,
-  [ACCENT_BIESEXUAL]: _accent_biesexual__WEBPACK_IMPORTED_MODULE_7__
+  [ACCENT_BISEXUAL]: accentBisexual
 };
 
 // Set Yellow as the default accent theme
