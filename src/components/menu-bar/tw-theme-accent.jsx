@@ -47,11 +47,11 @@ const options = defineMessages({
         id: 'tw.accent.green'
     },
     
-    // Added bisesexual theme option below
-    [ACCENT_BIESEXUAL]: {
-        defaultMessage: 'Biesexual',
-        description: 'Theme of the flag biesexual.',
-        id: 'tw.accent.biesexual'
+    // Added bisexual theme option below
+    [ACCENT_BISEXUAL]: {
+        defaultMessage: 'Bisexual',
+        description: 'Theme of the flag bisexual.',
+        id: 'tw.accent.bisexual'
     }
 });
 
