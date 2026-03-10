@@ -6,7 +6,7 @@ import * as accentRed from './accent/red';
 import * as accentRainbow from './accent/rainbow';
 import * as accentYellow from './accent/yellow';
 import * as accentGreen from './accent/green';
-import * as accentBiesexual from './accent/biesexual';
+import * as accentBiesexual from './accent/bisexual';
 
 import * as guiLight from './gui/light';
 import * as guiDark from './gui/dark';
@@ -21,7 +21,7 @@ const ACCENT_RED = 'red';
 const ACCENT_RAINBOW = 'rainbow';
 const ACCENT_YELLOW = 'yellow';
 const ACCENT_GREEN = 'green';
-const ACCENT_BIESEXUAL = 'biesexual';
+const ACCENT_BISEXUAL = 'bisexual';
 
 const ACCENT_MAP = {
     [ACCENT_PURPLE]: accentPurple,
@@ -30,7 +30,7 @@ const ACCENT_MAP = {
     [ACCENT_RAINBOW]: accentRainbow,
     [ACCENT_YELLOW]: accentYellow,
     [ACCENT_GREEN]: accentGreen,
-    [ACCENT_BIESEXUAL]: accentBiesexual
+    [ACCENT_BISEXUAL]: accentBisexual
 };
 
 // Set Yellow as the default accent theme
