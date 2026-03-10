@@ -1341,7 +1341,7 @@ const ACCENT_MAP = {
   [ACCENT_RAINBOW]: _accent_rainbow__WEBPACK_IMPORTED_MODULE_4__,
   [ACCENT_YELLOW]: _accent_yellow__WEBPACK_IMPORTED_MODULE_5__,
   [ACCENT_GREEN]: _accent_green__WEBPACK_IMPORTED_MODULE_6__,
-  [ACCENT_BIESEXUAL]: accentBiesexual
+  [ACCENT_BIESEXUAL]: _accent_biesexual__WEBPACK_IMPORTED_MODULE_7__
 };
 
 // Set Yellow as the default accent theme
