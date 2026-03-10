@@ -1,34 +1,33 @@
 const guiColors = {
-    // Thème bisexuel : Rose, Violet, Bleu
+    // Teintes basées sur le rose (Primaire)
     'motion-primary': '#D60270',
     'motion-primary-transparent': '#D60270e6',
-    'motion-tertiary': '#9B4F96',
+    'motion-tertiary': '#96014e',
 
-    'looks-secondary': '#D60270',
-    'looks-transparent': '#D6027059',
-    'looks-light-transparent': '#D6027026',
-    'looks-secondary-dark': '#0038A8',
+    // Teintes mélangées/violettes (Secondaire)
+    'looks-secondary': '#9B4F96',
+    'looks-transparent': '#9B4F9659',
+    'looks-light-transparent': '#9B4F9626',
+    'looks-secondary-dark': 'hsla(294, 33%, 30%, 1)',
 
-    'extensions-primary': '#9B4F96',
-    'extensions-tertiary': '#0038A8',
-    'extensions-transparent': 'rgba(155, 79, 150, 0.35)',
-    'extensions-light': '#f4c7e6',
+    // Teintes basées sur le bleu (Extensions)
+    'extensions-primary': 'hsla(220, 100%, 33%, 1)',
+    'extensions-tertiary': 'hsla(220, 100%, 20%, 1)',
+    'extensions-transparent': 'hsla(220, 100%, 33%, 0.35)',
+    'extensions-light': 'hsla(220, 50%, 85%, 1)',
 
-    'drop-highlight': '#D60270',
+    'drop-highlight': '#ff7ac2',
 
-    'menu-bar-background-image': 'linear-gradient(90deg, #D60270 0%, #D60270 40%, #9B4F96 40%, #9B4F96 60%, #0038A8 60%, #0038A8 100%)'
+    // Dégradé intégrant les couleurs du drapeau bi
+    'menu-bar-background-image': 'linear-gradient(90deg, #D60270 0%, #D60270 40%, #9B4F96 45%, #9B4F96 55%, #0038A8 60%, #0038A8 100%)'
 };
 
 const blockColors = {
     checkboxActiveBackground: '#D60270',
-    checkboxActiveBorder: '#9B4F96'
+    checkboxActiveBorder: '#96014e'
 };
 
-// Création de l'objet attendu par votre application
-const accentBiesexual = {
+export {
     guiColors,
     blockColors
 };
-
-// Export par défaut pour que l'importation fonctionne dans index.js
-export default accentBiesexual;
