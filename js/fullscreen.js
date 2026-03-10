@@ -41133,7 +41133,7 @@ module.exports = __webpack_require__.p + "static/assets/c73619fea5bb43c53a080399
 /*!************************************************!*\
   !*** ./src/lib/libraries/extensions/index.jsx ***!
   \************************************************/
-/*! exports provided: default, galleryLoading, galleryMore, galleryError */
+/*! exports provided: default, galleryLoading, galleryMore, galleryError, stormWarpGalleryLoading, stormWarpGalleryMore, stormWarpGalleryError */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -41141,6 +41141,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "galleryLoading", function() { return galleryLoading; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "galleryMore", function() { return galleryMore; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "galleryError", function() { return galleryError; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "stormWarpGalleryLoading", function() { return stormWarpGalleryLoading; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "stormWarpGalleryMore", function() { return stormWarpGalleryMore; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "stormWarpGalleryError", function() { return stormWarpGalleryError; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_intl__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-intl */ "./node_modules/react-intl/lib/index.es.js");
@@ -41587,6 +41590,45 @@ const galleryError = {
     id: "tw.extensionGallery.error"
   }),
   tags: ['tw'],
+  featured: true
+};
+
+// --- Added for StormWarp Extension Gallery ---
+
+const stormWarpGalleryLoading = {
+  name: 'StormWarp Extension Gallery',
+  href: 'https://www.stormwindsky.com/Tools/Extensions%20Library%20(StormWarp).html',
+  extensionId: 'stormwarp_gallery',
+  iconURL: _gallery_gallery_svg__WEBPACK_IMPORTED_MODULE_36___default.a,
+  description: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_intl__WEBPACK_IMPORTED_MODULE_1__["FormattedMessage"], {
+    defaultMessage: "Loading StormWarp extension gallery...",
+    id: "sw.extensionGallery.loading"
+  }),
+  tags: ['sw'],
+  featured: true
+};
+const stormWarpGalleryMore = {
+  name: 'StormWarp Extension Gallery',
+  href: 'https://www.stormwindsky.com/Tools/Extensions%20Library%20(StormWarp).html',
+  extensionId: 'stormwarp_gallery',
+  iconURL: _gallery_gallery_svg__WEBPACK_IMPORTED_MODULE_36___default.a,
+  description: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_intl__WEBPACK_IMPORTED_MODULE_1__["FormattedMessage"], {
+    defaultMessage: "Learn more about extensions at stormwindsky.com.",
+    id: "sw.extensionGallery.more"
+  }),
+  tags: ['sw'],
+  featured: true
+};
+const stormWarpGalleryError = {
+  name: 'StormWarp Extension Gallery',
+  href: 'https://www.stormwindsky.com/Tools/Extensions%20Library%20(StormWarp).html',
+  extensionId: 'stormwarp_gallery',
+  iconURL: _gallery_gallery_svg__WEBPACK_IMPORTED_MODULE_36___default.a,
+  description: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_intl__WEBPACK_IMPORTED_MODULE_1__["FormattedMessage"], {
+    defaultMessage: "Error loading StormWarp extension gallery. Visit stormwindsky.com to find more extensions.",
+    id: "sw.extensionGallery.error"
+  }),
+  tags: ['sw'],
   featured: true
 };
 
