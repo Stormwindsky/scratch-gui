@@ -26394,6 +26394,42 @@ const translateGalleryItem = (extension, locale) => _objectSpread(_objectSpread(
   name: extension.nameTranslations[locale] || extension.name,
   description: extension.descriptionTranslations[locale] || extension.description
 });
+let cachedGallery = null;
+const fetchLibrary = async () => {
+  const res = await fetch('https://extensions.turbowarp.org/generated-metadata/extensions-v0.json');
+  if (!res.ok) {
+    throw new Error("HTTP status ".concat(res.status));
+  }
+  const data = await res.json();
+  return data.extensions.map(extension => ({
+    name: extension.name,
+    nameTranslations: extension.nameTranslations || {},
+    description: extension.description,
+    descriptionTranslations: extension.descriptionTranslations || {},
+    extensionId: extension.id,
+    extensionURL: "https://extensions.turbowarp.org/".concat(extension.slug, ".js"),
+    iconURL: "https://extensions.turbowarp.org/".concat(extension.image || 'images/unknown.svg'),
+    tags: ['tw'],
+    credits: [...(extension.original || []), ...(extension.by || [])].map(credit => {
+      if (credit.link) {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("a", {
+          href: credit.link,
+          target: "_blank",
+          rel: "noreferrer",
+          key: credit.name
+        }, credit.name);
+      }
+      return credit.name;
+    }),
+    docsURI: extension.docs ? "https://extensions.turbowarp.org/".concat(extension.slug) : null,
+    samples: extension.samples ? extension.samples.map(sample => ({
+      href: "".concat("", "editor?project_url=https://extensions.turbowarp.org/samples/").concat(encodeURIComponent(sample), ".sb3"),
+      text: sample
+    })) : null,
+    incompatibleWithScratch: !extension.scratchCompatible,
+    featured: true
+  }));
+};
 class ExtensionLibrary extends react__WEBPACK_IMPORTED_MODULE_2___default.a.PureComponent {
   constructor(props) {
     super(props);
@@ -26405,40 +26441,71 @@ class ExtensionLibrary extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Pure
     };
   }
   componentDidMount() {
-    // Chargement basique de la galerie TurboWarp
-    fetch('https://extensions.turbowarp.org/generated-metadata/extensions-v0.json').then(res => res.json()).then(data => this.setState({
-      gallery: data
-    })).catch(() => this.setState({
-      galleryError: true
-    }));
+    if (!this.state.gallery) {
+      const timeout = setTimeout(() => {
+        this.setState({
+          galleryTimedOut: true
+        });
+      }, 750);
+      fetchLibrary().then(gallery => {
+        cachedGallery = gallery;
+        this.setState({
+          gallery
+        });
+        clearTimeout(timeout);
+      }).catch(error => {
+        _lib_log__WEBPACK_IMPORTED_MODULE_5__["default"].error(error);
+        this.setState({
+          galleryError: error
+        });
+        clearTimeout(timeout);
+      });
+    }
   }
   handleItemSelect(item) {
-    const id = item.extensionId;
-    if (id === 'stormwarp_gallery') {
-      window.open(item.href, '_blank');
+    if (item.href) {
       return;
     }
-    if (item.disabled) return;
-    this.props.vm.extensionManager.loadExtensionURL(item.extensionURL || id);
+    const extensionId = item.extensionId;
+    if (extensionId === 'custom_extension') {
+      this.props.onOpenCustomExtensionModal();
+      return;
+    }
+    if (extensionId === 'procedures_enable_return') {
+      this.props.onEnableProcedureReturns();
+      this.props.onCategorySelected('myBlocks');
+      return;
+    }
+    const url = item.extensionURL ? item.extensionURL : extensionId;
+    if (!item.disabled) {
+      if (this.props.vm.extensionManager.isExtensionLoaded(extensionId)) {
+        this.props.onCategorySelected(extensionId);
+      } else {
+        this.props.vm.extensionManager.loadExtensionURL(url).then(() => {
+          this.props.onCategorySelected(extensionId);
+        }).catch(err => {
+          _lib_log__WEBPACK_IMPORTED_MODULE_5__["default"].error(err);
+          // eslint-disable-next-line no-alert
+          alert(err);
+        });
+      }
+    }
   }
   render() {
-    let library = _lib_libraries_extensions_index_jsx__WEBPACK_IMPORTED_MODULE_6__["default"].map(toLibraryItem);
-
-    // Ajout section TurboWarp
-    library.push('---');
-    if (this.state.gallery) {
-      library.push(toLibraryItem(_lib_libraries_extensions_index_jsx__WEBPACK_IMPORTED_MODULE_6__["galleryMore"]));
-      const locale = this.props.intl.locale;
-      library.push(...this.state.gallery.filter(i => i.extensionId !== 'faceSensing').map(i => translateGalleryItem(i, locale)).map(toLibraryItem));
-    } else if (this.state.galleryError) {
-      library.push(toLibraryItem(_lib_libraries_extensions_index_jsx__WEBPACK_IMPORTED_MODULE_6__["galleryError"]));
-    } else {
-      library.push(toLibraryItem(_lib_libraries_extensions_index_jsx__WEBPACK_IMPORTED_MODULE_6__["galleryLoading"]));
+    let library = null;
+    if (this.state.gallery || this.state.galleryError || this.state.galleryTimedOut) {
+      library = _lib_libraries_extensions_index_jsx__WEBPACK_IMPORTED_MODULE_6__["default"].map(toLibraryItem);
+      library.push('---');
+      if (this.state.gallery) {
+        library.push(toLibraryItem(_lib_libraries_extensions_index_jsx__WEBPACK_IMPORTED_MODULE_6__["galleryMore"]));
+        const locale = this.props.intl.locale;
+        library.push(...this.state.gallery.filter(i => i.extensionId !== 'faceSensing').map(i => translateGalleryItem(i, locale)).map(toLibraryItem));
+      } else if (this.state.galleryError) {
+        library.push(toLibraryItem(_lib_libraries_extensions_index_jsx__WEBPACK_IMPORTED_MODULE_6__["galleryError"]));
+      } else {
+        library.push(toLibraryItem(_lib_libraries_extensions_index_jsx__WEBPACK_IMPORTED_MODULE_6__["galleryLoading"]));
+      }
     }
-
-    // Ajout section StormWarp
-    library.push('---');
-    library.push(toLibraryItem(_lib_libraries_extensions_index_jsx__WEBPACK_IMPORTED_MODULE_6__["stormwarpGalleryMore"]));
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_components_library_library_jsx__WEBPACK_IMPORTED_MODULE_8__["default"], {
       data: library,
       filterable: true,
@@ -26459,7 +26526,7 @@ ExtensionLibrary.propTypes = {
   onOpenCustomExtensionModal: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func,
   onRequestClose: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func,
   visible: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.bool,
-  vm: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.instanceOf(scratch_vm__WEBPACK_IMPORTED_MODULE_3___default.a).isRequired
+  vm: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.instanceOf(scratch_vm__WEBPACK_IMPORTED_MODULE_3___default.a).isRequired // eslint-disable-line react/no-unused-prop-types
 };
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_intl__WEBPACK_IMPORTED_MODULE_4__["injectIntl"])(ExtensionLibrary));
 
