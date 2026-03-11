@@ -224,11 +224,11 @@ export const galleryLoading = {
 };
 
 export const galleryMore = {
-    name: (<FormattedMessage defaultMessage="Extension Gallery" description="Gallery" id="tw.gallery.more.name" />),
+    name: (<FormattedMessage defaultMessage="Turbowarp Extension Gallery" description="Gallery" id="tw.gallery.more.name" />),
     href: 'https://extensions.turbowarp.org/',
     extensionId: 'gallery',
     iconURL: galleryIcon,
-    description: (<FormattedMessage defaultMessage="More info..." description="More" id="tw.gallery.more.desc" />),
+    description: (<FormattedMessage defaultMessage="Learn more about extensions at extensions.turbowarp.org." description="More" id="tw.gallery.more.desc" />),
     tags: ['tw'],
     featured: true
 };
