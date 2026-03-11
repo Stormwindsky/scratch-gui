@@ -503,3 +503,4 @@ export const galleryError = {
     tags: ['tw'],
     featured: true
 };
+
