@@ -9,7 +9,10 @@ import extensionLibraryContent, {
     galleryError,
     galleryLoading,
     galleryMore,
-    galleryStorm
+    galleryStorm,
+    stormwarpGalleryError, // test idk if it's will work
+    stormwarpGalleryLoading, // test
+    stormwarpGalleryMore // test
 } from '../lib/libraries/extensions/index.jsx';
 import extensionTags from '../lib/libraries/tw-extension-tags';
 
