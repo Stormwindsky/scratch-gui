@@ -49,8 +49,9 @@ class ExtensionLibrary extends React.PureComponent {
             'handleItemSelect'
         ]);
         this.state = {
-            gallery: null,
-            galleryError: false
+            gallery: cachedGallery,
+            galleryError: null,
+            galleryTimedOut: false
         };
     }
     
