@@ -19,3 +19,7 @@ Here: https://www.svgrepo.com/svg/143976/paintbrush
 The icon named, icon--search.svg is from svgrepo.com & under license CC0 1.0
 
 https://www.svgrepo.com/svg/421618/search-searching-web
+
+The icon named, icon--file-upload.svg is from svgrepo.com & under license CC0 1.0
+
+https://www.svgrepo.com/svg/530408/upload
