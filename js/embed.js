@@ -39154,14 +39154,14 @@ const galleryLoading = {
 };
 const galleryMore = {
   name: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_intl__WEBPACK_IMPORTED_MODULE_1__["FormattedMessage"], {
-    defaultMessage: "Extension Gallery",
+    defaultMessage: "Turbowarp Extension Gallery",
     id: "tw.gallery.more.name"
   }),
   href: 'https://extensions.turbowarp.org/',
   extensionId: 'gallery',
   iconURL: _gallery_gallery_svg__WEBPACK_IMPORTED_MODULE_36___default.a,
   description: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_intl__WEBPACK_IMPORTED_MODULE_1__["FormattedMessage"], {
-    defaultMessage: "More info...",
+    defaultMessage: "Learn more about extensions at extensions.turbowarp.org.",
     id: "tw.gallery.more.desc"
   }),
   tags: ['tw'],
