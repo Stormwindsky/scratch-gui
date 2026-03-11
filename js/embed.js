@@ -26399,8 +26399,9 @@ class ExtensionLibrary extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Pure
     super(props);
     lodash_bindall__WEBPACK_IMPORTED_MODULE_0___default()(this, ['handleItemSelect']);
     this.state = {
-      gallery: null,
-      galleryError: false
+      gallery: cachedGallery,
+      galleryError: null,
+      galleryTimedOut: false
     };
   }
   componentDidMount() {
