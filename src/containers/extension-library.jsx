@@ -9,10 +9,9 @@ import extensionLibraryContent, {
     galleryError,
     galleryLoading,
     galleryMore,
-    galleryStorm,
-    stormwarpGalleryError, // test idk if it's will work
-    stormwarpGalleryLoading, // test
-    stormwarpGalleryMore // test
+    stormwarpGalleryError,
+    stormwarpGalleryLoading,
+    stormwarpGalleryMore
 } from '../lib/libraries/extensions/index.jsx';
 import extensionTags from '../lib/libraries/tw-extension-tags';
 
@@ -43,143 +42,59 @@ const translateGalleryItem = (extension, locale) => ({
     description: extension.descriptionTranslations[locale] || extension.description
 });
 
-let cachedGallery = null;
-
-const fetchLibrary = async () => {
-    const res = await fetch('https://extensions.turbowarp.org/generated-metadata/extensions-v0.json');
-    if (!res.ok) {
-        throw new Error(`HTTP status ${res.status}`);
-    }
-    const data = await res.json();
-    return data.extensions.map(extension => ({
-        name: extension.name,
-        nameTranslations: extension.nameTranslations || {},
-        description: extension.description,
-        descriptionTranslations: extension.descriptionTranslations || {},
-        extensionId: extension.id,
-        extensionURL: `https://extensions.turbowarp.org/${extension.slug}.js`,
-        iconURL: `https://extensions.turbowarp.org/${extension.image || 'images/unknown.svg'}`,
-        tags: ['tw'],
-        credits: [
-            ...(extension.original || []),
-            ...(extension.by || [])
-        ].map(credit => {
-            if (credit.link) {
-                return (
-                    <a
-                        href={credit.link}
-                        target="_blank"
-                        rel="noreferrer"
-                        key={credit.name}
-                    >
-                        {credit.name}
-                    </a>
-                );
-            }
-            return credit.name;
-        }),
-        docsURI: extension.docs ? `https://extensions.turbowarp.org/${extension.slug}` : null,
-        samples: extension.samples ? extension.samples.map(sample => ({
-            href: `${process.env.ROOT}editor?project_url=https://extensions.turbowarp.org/samples/${encodeURIComponent(sample)}.sb3`,
-            text: sample
-        })) : null,
-        incompatibleWithScratch: !extension.scratchCompatible,
-        featured: true
-    }));
-};
-
 class ExtensionLibrary extends React.PureComponent {
-    constructor (props) {
+    constructor(props) {
         super(props);
         bindAll(this, [
             'handleItemSelect'
         ]);
         this.state = {
-            gallery: cachedGallery,
-            galleryError: null,
-            galleryTimedOut: false
+            gallery: null,
+            galleryError: false
         };
     }
-    componentDidMount () {
-        if (!this.state.gallery) {
-            const timeout = setTimeout(() => {
-                this.setState({
-                    galleryTimedOut: true
-                });
-            }, 750);
-
-            fetchLibrary()
-                .then(gallery => {
-                    cachedGallery = gallery;
-                    this.setState({
-                        gallery
-                    });
-                    clearTimeout(timeout);
-                })
-                .catch(error => {
-                    log.error(error);
-                    this.setState({
-                        galleryError: error
-                    });
-                    clearTimeout(timeout);
-                });
-        }
+    
+    componentDidMount() {
+        // Chargement basique de la galerie TurboWarp
+        fetch('https://extensions.turbowarp.org/generated-metadata/extensions-v0.json')
+            .then(res => res.json())
+            .then(data => this.setState({gallery: data}))
+            .catch(() => this.setState({galleryError: true}));
     }
-    handleItemSelect (item) {
-        if (item.href) {
+
+    handleItemSelect(item) {
+        const id = item.extensionId;
+        if (id === 'stormwarp_gallery') {
+            window.open(item.href, '_blank');
             return;
         }
-
-        const extensionId = item.extensionId;
-
-        if (extensionId === 'custom_extension') {
-            this.props.onOpenCustomExtensionModal();
-            return;
-        }
-
-        if (extensionId === 'procedures_enable_return') {
-            this.props.onEnableProcedureReturns();
-            this.props.onCategorySelected('myBlocks');
-            return;
-        }
-
-        const url = item.extensionURL ? item.extensionURL : extensionId;
-        if (!item.disabled) {
-            if (this.props.vm.extensionManager.isExtensionLoaded(extensionId)) {
-                this.props.onCategorySelected(extensionId);
-            } else {
-                this.props.vm.extensionManager.loadExtensionURL(url)
-                    .then(() => {
-                        this.props.onCategorySelected(extensionId);
-                    })
-                    .catch(err => {
-                        log.error(err);
-                        // eslint-disable-next-line no-alert
-                        alert(err);
-                    });
-            }
-        }
+        if (item.disabled) return;
+        this.props.vm.extensionManager.loadExtensionURL(item.extensionURL || id);
     }
-    render () {
-        let library = null;
-        if (this.state.gallery || this.state.galleryError || this.state.galleryTimedOut) {
-            library = extensionLibraryContent.map(toLibraryItem);
-            library.push('---');
-            if (this.state.gallery) {
-                library.push(toLibraryItem(galleryMore));
-                const locale = this.props.intl.locale;
-                library.push(
-                    ...this.state.gallery
-                        .filter(i => i.extensionId !== 'faceSensing')
-                        .map(i => translateGalleryItem(i, locale))
-                        .map(toLibraryItem)
-                );
-            } else if (this.state.galleryError) {
-                library.push(toLibraryItem(galleryError));
-            } else {
-                library.push(toLibraryItem(galleryLoading));
-            }
+
+    render() {
+        let library = extensionLibraryContent.map(toLibraryItem);
+
+        // Ajout section TurboWarp
+        library.push('---');
+        if (this.state.gallery) {
+            library.push(toLibraryItem(galleryMore));
+            const locale = this.props.intl.locale;
+            library.push(
+                ...this.state.gallery
+                    .filter(i => i.extensionId !== 'faceSensing')
+                    .map(i => translateGalleryItem(i, locale))
+                    .map(toLibraryItem)
+            );
+        } else if (this.state.galleryError) {
+            library.push(toLibraryItem(galleryError));
+        } else {
+            library.push(toLibraryItem(galleryLoading));
         }
+
+        // Ajout section StormWarp
+        library.push('---');
+        library.push(toLibraryItem(stormwarpGalleryMore));
 
         return (
             <LibraryComponent
@@ -204,7 +119,7 @@ ExtensionLibrary.propTypes = {
     onOpenCustomExtensionModal: PropTypes.func,
     onRequestClose: PropTypes.func,
     visible: PropTypes.bool,
-    vm: PropTypes.instanceOf(VM).isRequired // eslint-disable-line react/no-unused-prop-types
+    vm: PropTypes.instanceOf(VM).isRequired
 };
 
 export default injectIntl(ExtensionLibrary);
