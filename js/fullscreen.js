@@ -41243,7 +41243,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
- // TODO: Rename file names to match variable/prop names?
+
 
 
 
@@ -41375,11 +41375,6 @@ __webpack_require__.r(__webpack_exports__);
   }),
   tags: ['scratch'],
   featured: true,
-  disabled: false,
-  bluetoothRequired: true,
-  internetConnectionRequired: true,
-  launchPeripheralConnectionFlow: true,
-  useAutoScan: false,
   connectionIconURL: _microbit_microbit_illustration_svg__WEBPACK_IMPORTED_MODULE_18___default.a,
   connectionSmallIconURL: _microbit_microbit_small_svg__WEBPACK_IMPORTED_MODULE_17___default.a,
   connectingMessage: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_intl__WEBPACK_IMPORTED_MODULE_1__["FormattedMessage"], {
@@ -41399,15 +41394,10 @@ __webpack_require__.r(__webpack_exports__);
   }),
   tags: ['scratch'],
   featured: true,
-  disabled: false,
-  bluetoothRequired: true,
-  internetConnectionRequired: true,
-  launchPeripheralConnectionFlow: true,
-  useAutoScan: false,
   connectionIconURL: _ev3_ev3_hub_illustration_svg__WEBPACK_IMPORTED_MODULE_21___default.a,
   connectionSmallIconURL: _ev3_ev3_small_svg__WEBPACK_IMPORTED_MODULE_20___default.a,
   connectingMessage: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_intl__WEBPACK_IMPORTED_MODULE_1__["FormattedMessage"], {
-    defaultMessage: "Connecting. Make sure the pin on your EV3 is set to 1234.",
+    defaultMessage: "Connecting EV3",
     id: "gui.extension.ev3.connectingMessage"
   }),
   helpLink: 'https://scratch.mit.edu/ev3'
@@ -41423,11 +41413,6 @@ __webpack_require__.r(__webpack_exports__);
   }),
   tags: ['scratch'],
   featured: true,
-  disabled: false,
-  bluetoothRequired: true,
-  internetConnectionRequired: true,
-  launchPeripheralConnectionFlow: true,
-  useAutoScan: true,
   connectionIconURL: _boost_boost_illustration_svg__WEBPACK_IMPORTED_MODULE_28___default.a,
   connectionSmallIconURL: _boost_boost_small_svg__WEBPACK_IMPORTED_MODULE_27___default.a,
   connectionTipIconURL: _boost_boost_button_illustration_svg__WEBPACK_IMPORTED_MODULE_29___default.a,
@@ -41448,11 +41433,6 @@ __webpack_require__.r(__webpack_exports__);
   }),
   tags: ['scratch'],
   featured: true,
-  disabled: false,
-  bluetoothRequired: true,
-  internetConnectionRequired: true,
-  launchPeripheralConnectionFlow: true,
-  useAutoScan: true,
   connectionIconURL: _wedo2_wedo_illustration_svg__WEBPACK_IMPORTED_MODULE_24___default.a,
   connectionSmallIconURL: _wedo2_wedo_small_svg__WEBPACK_IMPORTED_MODULE_23___default.a,
   connectionTipIconURL: _wedo2_wedo_button_illustration_svg__WEBPACK_IMPORTED_MODULE_25___default.a,
@@ -41473,11 +41453,6 @@ __webpack_require__.r(__webpack_exports__);
   }),
   tags: ['scratch'],
   featured: true,
-  disabled: false,
-  bluetoothRequired: true,
-  internetConnectionRequired: true,
-  launchPeripheralConnectionFlow: true,
-  useAutoScan: false,
   connectionIconURL: _gdxfor_gdxfor_illustration_svg__WEBPACK_IMPORTED_MODULE_32___default.a,
   connectionSmallIconURL: _gdxfor_gdxfor_small_svg__WEBPACK_IMPORTED_MODULE_31___default.a,
   connectingMessage: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_intl__WEBPACK_IMPORTED_MODULE_1__["FormattedMessage"], {
@@ -41486,7 +41461,6 @@ __webpack_require__.r(__webpack_exports__);
   }),
   helpLink: 'https://scratch.mit.edu/vernier'
 }, {
-  // not really an extension, but it's easiest to present it as one
   name: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_intl__WEBPACK_IMPORTED_MODULE_1__["FormattedMessage"], {
     defaultMessage: "Custom Reporters",
     id: "tw.customReporters.name"
@@ -41494,7 +41468,7 @@ __webpack_require__.r(__webpack_exports__);
   extensionId: 'procedures_enable_return',
   iconURL: _custom_return_svg__WEBPACK_IMPORTED_MODULE_35___default.a,
   description: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_intl__WEBPACK_IMPORTED_MODULE_1__["FormattedMessage"], {
-    defaultMessage: "Allow custom blocks to output values and be used as inputs.",
+    defaultMessage: "Allow custom blocks to output values.",
     id: "tw.customReporters.description"
   }),
   tags: ['tw'],
@@ -41525,69 +41499,53 @@ __webpack_require__.r(__webpack_exports__);
   extensionId: 'custom_extension',
   iconURL: _custom_custom_svg__WEBPACK_IMPORTED_MODULE_34___default.a,
   description: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_intl__WEBPACK_IMPORTED_MODULE_1__["FormattedMessage"], {
-    defaultMessage: "Load custom extensions from URLs, files, or JavaScript source code.",
+    defaultMessage: "Load custom extensions.",
     id: "tw.customExtension.description"
   }),
   tags: ['tw'],
   featured: true
-  // Not marked as incompatible with Scratch so that clicking on it doesn't show a prompt
 }]);
 const galleryLoading = {
   name: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_intl__WEBPACK_IMPORTED_MODULE_1__["FormattedMessage"], {
-    defaultMessage: "{APP_NAME} Extension Gallery",
-    id: "tw.extensionGallery.name",
-    values: {
-      APP_NAME: _brand__WEBPACK_IMPORTED_MODULE_37__["APP_NAME"]
-    }
+    defaultMessage: "Gallery Loading",
+    id: "tw.gallery.loading.name"
   }),
   href: 'https://extensions.turbowarp.org/',
   extensionId: 'gallery',
   iconURL: _gallery_gallery_svg__WEBPACK_IMPORTED_MODULE_36___default.a,
-  description: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_intl__WEBPACK_IMPORTED_MODULE_1__["FormattedMessage"]
-  // eslint-disable-next-line max-len
-  , {
-    defaultMessage: "Loading extension gallery...",
-    id: "tw.extensionGallery.loading"
+  description: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_intl__WEBPACK_IMPORTED_MODULE_1__["FormattedMessage"], {
+    defaultMessage: "Loading...",
+    id: "tw.gallery.loading.desc"
   }),
   tags: ['tw'],
   featured: true
 };
 const galleryMore = {
   name: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_intl__WEBPACK_IMPORTED_MODULE_1__["FormattedMessage"], {
-    defaultMessage: "{APP_NAME} Extension Gallery",
-    id: "tw.extensionGallery.name",
-    values: {
-      APP_NAME: _brand__WEBPACK_IMPORTED_MODULE_37__["APP_NAME"]
-    }
+    defaultMessage: "Extension Gallery",
+    id: "tw.gallery.more.name"
   }),
   href: 'https://extensions.turbowarp.org/',
   extensionId: 'gallery',
   iconURL: _gallery_gallery_svg__WEBPACK_IMPORTED_MODULE_36___default.a,
-  description: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_intl__WEBPACK_IMPORTED_MODULE_1__["FormattedMessage"]
-  // eslint-disable-next-line max-len
-  , {
-    defaultMessage: "Learn more about extensions at extensions.turbowarp.org.",
-    id: "tw.extensionGallery.more"
+  description: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_intl__WEBPACK_IMPORTED_MODULE_1__["FormattedMessage"], {
+    defaultMessage: "More info...",
+    id: "tw.gallery.more.desc"
   }),
   tags: ['tw'],
   featured: true
 };
 const galleryError = {
   name: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_intl__WEBPACK_IMPORTED_MODULE_1__["FormattedMessage"], {
-    defaultMessage: "{APP_NAME} Extension Gallery",
-    id: "tw.extensionGallery.name",
-    values: {
-      APP_NAME: _brand__WEBPACK_IMPORTED_MODULE_37__["APP_NAME"]
-    }
+    defaultMessage: "Gallery Error",
+    id: "tw.gallery.error.name"
   }),
   href: 'https://extensions.turbowarp.org/',
   extensionId: 'gallery',
   iconURL: _gallery_gallery_svg__WEBPACK_IMPORTED_MODULE_36___default.a,
-  description: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_intl__WEBPACK_IMPORTED_MODULE_1__["FormattedMessage"]
-  // eslint-disable-next-line max-len
-  , {
-    defaultMessage: "Error loading extension gallery. Visit extensions.turbowarp.org to find more extensions.",
-    id: "tw.extensionGallery.error"
+  description: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_intl__WEBPACK_IMPORTED_MODULE_1__["FormattedMessage"], {
+    defaultMessage: "Error loading.",
+    id: "tw.gallery.error.desc"
   }),
   tags: ['tw'],
   featured: true
@@ -41615,7 +41573,7 @@ const stormwarpGalleryError = {
   href: 'https://www.stormwindsky.com/Tools/Extensions%20Library%20(StormWarp).html',
   extensionId: 'stormwarp_gallery',
   iconURL: _gallery_gallery_svg__WEBPACK_IMPORTED_MODULE_36___default.a,
-  description: 'Error loading StormWarp gallery. Visit stormwindsky.com to find more extensions.',
+  description: 'Error loading StormWarp gallery.',
   tags: ['tw'],
   featured: true
 };
