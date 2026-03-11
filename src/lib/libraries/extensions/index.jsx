@@ -361,6 +361,7 @@ export default [
         helpLink: 'https://scratch.mit.edu/vernier'
     },
     {
+        // not really an extension, but it's easiest to present it as one
         name: (
             <FormattedMessage
                 defaultMessage="Custom Reporters"
@@ -384,7 +385,7 @@ export default [
     {
         name: (
             <FormattedMessage
-                defaultMessage="Turbowarp Blocks"
+                defaultMessage="{APP_NAME} Blocks"
                 description="Name of the strange 'TurboWarp Blocks' extension"
                 id="tw.twExtension.name"
                 values={{
@@ -424,28 +425,19 @@ export default [
         ),
         tags: ['tw'],
         featured: true
-    },
-    {
-        /* ICI : ON AJOUTE STORM-WARP DANS LE TABLEAU DES EXTENSIONS VISIBLES */
-        name: 'StormWarp Extension Gallery',
-        extensionId: 'stormwarp_gallery_link',
-        iconURL: galleryIcon,
-        description: 'Accéder à la bibliothèque d\'extensions StormWarp.',
-        tags: ['tw', 'sw'],
-        featured: true,
-        href: 'https://www.stormwindsky.com/Tools/Extensions%20Library%20(StormWarp).html'
+        // Not marked as incompatible with Scratch so that clicking on it doesn't show a prompt
     }
-]; // FIN DU TABLEAU EXPORT DEFAULT
-
-/* Tout ce qui suit est exporté séparément pour la logique de chargement dynamique */
+];
 
 export const galleryLoading = {
     name: (
         <FormattedMessage
-            defaultMessage="Turbowarp Extension Gallery"
+            defaultMessage="{APP_NAME} Extension Gallery"
             description="Name of extensions.turbowarp.org in extension library"
             id="tw.extensionGallery.name"
-            values={{APP_NAME}}
+            values={{
+                APP_NAME
+            }}
         />
     ),
     href: 'https://extensions.turbowarp.org/',
@@ -453,7 +445,9 @@ export const galleryLoading = {
     iconURL: galleryIcon,
     description: (
         <FormattedMessage
+            // eslint-disable-next-line max-len
             defaultMessage="Loading extension gallery..."
+            description="Appears while loading extension list from the custom extension gallery"
             id="tw.extensionGallery.loading"
         />
     ),
@@ -464,10 +458,12 @@ export const galleryLoading = {
 export const galleryMore = {
     name: (
         <FormattedMessage
-            defaultMessage="Turbowarp Extension Gallery"
+            defaultMessage="{APP_NAME} Extension Gallery"
             description="Name of extensions.turbowarp.org in extension library"
             id="tw.extensionGallery.name"
-            values={{APP_NAME}}
+            values={{
+                APP_NAME
+            }}
         />
     ),
     href: 'https://extensions.turbowarp.org/',
@@ -475,7 +471,9 @@ export const galleryMore = {
     iconURL: galleryIcon,
     description: (
         <FormattedMessage
+            // eslint-disable-next-line max-len
             defaultMessage="Learn more about extensions at extensions.turbowarp.org."
+            description="Appears after the extension list from the gallery was loaded successfully"
             id="tw.extensionGallery.more"
         />
     ),
@@ -486,9 +484,12 @@ export const galleryMore = {
 export const galleryError = {
     name: (
         <FormattedMessage
-            defaultMessage="Turbowarp Extension Gallery"
+            defaultMessage="{APP_NAME} Extension Gallery"
+            description="Name of extensions.turbowarp.org in extension library"
             id="tw.extensionGallery.name"
-            values={{APP_NAME}}
+            values={{
+                APP_NAME
+            }}
         />
     ),
     href: 'https://extensions.turbowarp.org/',
@@ -496,7 +497,9 @@ export const galleryError = {
     iconURL: galleryIcon,
     description: (
         <FormattedMessage
-            defaultMessage="Error loading extension gallery."
+            // eslint-disable-next-line max-len
+            defaultMessage="Error loading extension gallery. Visit extensions.turbowarp.org to find more extensions."
+            description="Appears when an error occurred loading extension list from the custom extension gallery"
             id="tw.extensionGallery.error"
         />
     ),
@@ -504,3 +507,32 @@ export const galleryError = {
     featured: true
 };
 
+export const stormwarpGalleryLoading = {
+    name: 'StormWarp Gallery',
+    href: 'https://www.stormwindsky.com/Tools/Extensions%20Library%20(StormWarp).html',
+    extensionId: 'stormwarp_gallery',
+    iconURL: galleryIcon,
+    description: 'Loading StormWarp gallery...',
+    tags: ['tw'],
+    featured: true
+};
+
+export const stormwarpGalleryMore = {
+    name: 'StormWarp Gallery',
+    href: 'https://www.stormwindsky.com/Tools/Extensions%20Library%20(StormWarp).html',
+    extensionId: 'stormwarp_gallery',
+    iconURL: galleryIcon,
+    description: 'Learn more about extensions at stormwindsky.com.',
+    tags: ['tw'],
+    featured: true
+};
+
+export const stormwarpGalleryError = {
+    name: 'StormWarp Gallery',
+    href: 'https://www.stormwindsky.com/Tools/Extensions%20Library%20(StormWarp).html',
+    extensionId: 'stormwarp_gallery',
+    iconURL: galleryIcon,
+    description: 'Error loading StormWarp gallery. Visit stormwindsky.com to find more extensions.',
+    tags: ['tw'],
+    featured: true
+};
