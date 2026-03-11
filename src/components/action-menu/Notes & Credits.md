@@ -11,6 +11,11 @@ Here:
 https://www.svgrepo.com/svg/530246/gift
 
 
-The the icon named, icon--paint.svg is from svgrepo.com & under license CC0 1.0
+The icon named, icon--paint.svg is from svgrepo.com & under license CC0 1.0
 
 Here: https://www.svgrepo.com/svg/143976/paintbrush
+
+
+The icon named, icon--search.svg is from svgrepo.com & under license CC0 1.0
+
+https://www.svgrepo.com/svg/421618/search-searching-web
