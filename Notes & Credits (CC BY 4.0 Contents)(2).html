@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StormWarp | Assets & Media Credits</title>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/4.3.0/marked.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --electric-blue: #00f2ff;
+            --electric-glow: rgba(0, 242, 255, 0.5);
+            --dark-bg: #000000;
+            --card-bg: #0a0a0c;
+            --text-main: #e0e0e0;
+            --accent-gradient: linear-gradient(90deg, #00f2ff 0%, #0066ff 100%);
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: var(--text-main);
+            font-family: 'Rajdhani', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Electric Background Grid */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: 
+                linear-gradient(rgba(0, 242, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 242, 255, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            z-index: -1;
+        }
+
+        /* Pure Electric Header */
+        header {
+            height: 250px;
+            background: linear-gradient(135deg, #000000 0%, #06111a 50%, #000000 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 2px solid var(--electric-blue);
+            box-shadow: 0 0 20px var(--electric-glow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::after {
+            content: "";
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(0, 242, 255, 0.05) 0%, transparent 70%);
+            animation: pulse 8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.2); opacity: 0.8; }
+            100% { transform: scale(1); opacity: 0.5; }
+        }
+
+        header h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3rem;
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            text-shadow: 0 0 15px var(--electric-blue);
+            margin: 0;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: -40px auto 50px;
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 0 40px rgba(0,0,0,1), inset 0 0 10px rgba(0, 242, 255, 0.1);
+            border: 1px solid rgba(0, 242, 255, 0.3);
+            position: relative;
+        }
+
+        .back-nav { margin-bottom: 20px; }
+        .back-nav a {
+            color: var(--electric-blue);
+            text-decoration: none;
+            font-weight: bold;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.8rem;
+            border: 1px solid var(--electric-blue);
+            padding: 8px 15px;
+            transition: 0.3s;
+        }
+        .back-nav a:hover {
+            background: var(--electric-blue);
+            color: black;
+            box-shadow: 0 0 15px var(--electric-blue);
+        }
+
+        /* Content Styling */
+        #content h1, #content h2, #content h3 {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--electric-blue);
+            text-transform: uppercase;
+            border-bottom: 1px solid rgba(0, 242, 255, 0.2);
+            padding-bottom: 10px;
+            text-shadow: 0 0 5px var(--electric-glow);
+        }
+
+        #content a {
+            color: #00f2ff;
+            text-decoration: none;
+            transition: 0.3s;
+            border-bottom: 1px dashed var(--electric-blue);
+        }
+        #content a:hover {
+            text-shadow: 0 0 8px var(--electric-blue);
+            border-bottom: 1px solid var(--electric-blue);
+        }
+
+        ul { list-style: none; padding-left: 20px; }
+        ul li::before {
+            content: "⚡";
+            color: var(--electric-blue);
+            display: inline-block;
+            width: 1.5em;
+            margin-left: -1.5em;
+        }
+
+        /* Footer & Licenses */
+        footer {
+            margin-top: 50px;
+            padding: 20px;
+            border-top: 1px solid rgba(0, 242, 255, 0.2);
+            font-size: 0.85rem;
+            color: #888;
+        }
+        .license-box {
+            background: rgba(0, 242, 255, 0.05);
+            padding: 15px;
+            border-radius: 4px;
+            border-left: 4px solid var(--electric-blue);
+        }
+
+        .badge {
+            display: inline-block;
+            background: var(--accent-gradient);
+            color: black;
+            padding: 5px 15px;
+            font-weight: bold;
+            font-family: 'Orbitron', sans-serif;
+            margin-bottom: 15px;
+            clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
+        }
+
+        .loader { text-align: center; color: var(--electric-blue); padding: 50px; font-family: 'Orbitron'; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>StormWarp Assets</h1>
+</header>
+
+<div class="container">
+    <nav class="back-nav">
+        <a href="https://stormwindsky.github.io/StormWarp">← BACK TO HOME</a>
+    </nav>
+
+    <div class="badge">MEDIA REPOSITORY</div>
+    
+    <div id="loader" class="loader">SYNCHRONIZING ASSET DATA...</div>
+    
+    <div id="content"></div>
+
+    <footer>
+        <div class="license-box">
+            <p><strong>Sprites, Audio & Media:</strong> Licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0 International</a>.</p>
+            <p><strong>HTML Script & Website:</strong> Licensed under <a href="https://www.gnu.org/licenses/gpl-3.0.html" target="_blank">GPL-3.0</a>.</p>
+            <p><strong>Source Repositories:</strong></p>
+            <ul>
+                <li>Website Source Code: <a href="https://github.com/Stormwindsky/StormWarp-Main">StormWarp-Main (GNU)</a></li>
+                <li>Media Notes & Credits: <a href="https://github.com/Stormwindsky/StormWarp-Notes-and-Credits">StormWarp-N&C (CC0 1.0)</a></li>
+            </ul>
+        </div>
+    </footer>
+</div>
+
+<script>
+    // Pointing to your CC BY 4.0 Markdown file
+    const RAW_URL = 'https://raw.githubusercontent.com/Stormwindsky/StormWarp-Notes-and-Credits/refs/heads/main/N%26C%20CC%20BY%204.0.md';
+
+    async function fetchMarkdown() {
+        try {
+            const response = await fetch(RAW_URL);
+            if (!response.ok) throw new Error('Network error');
+            
+            const text = await response.text();
+            
+            marked.setOptions({
+                breaks: true,
+                gfm: true
+            });
+
+            document.getElementById('content').innerHTML = marked.parse(text);
+            document.getElementById('loader').style.display = 'none';
+        } catch (error) {
+            document.getElementById('loader').innerHTML = 'SERVER CONNECTION ERROR...';
+            console.error(error);
+        }
+    }
+
+    fetchMarkdown();
+</script>
+
+</body>
+</html>
