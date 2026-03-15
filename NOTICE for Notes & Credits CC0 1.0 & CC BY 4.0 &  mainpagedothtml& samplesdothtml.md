@@ -12,6 +12,8 @@ here:
 
 https://github.com/Stormwindsky/StormWarp-Notes-and-Credits
 
+All files .html N&C-CC BY 4.0Contents.html    &    N&C-CC0 1.0Contents.html are licensed under the **GPL-3.0 License**.
+
 
 
 ## 📦 Third-Party Dependencies & Licenses
