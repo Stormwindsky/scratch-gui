@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StormWarp - The Electric TurboWarp Fork</title>
+    <style>
+        :root {
+            --bg-color: #050505;
+            --accent-yellow: #ffdf00;
+            --electric-glow: rgba(255, 223, 0, 0.4);
+            --text-main: #ffffff;
+            --text-dim: #a0a0a0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Segoe UI', 'Roboto', sans-serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Lightning atmosphere */
+        .bg-glow {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at 50% 50%, #1a1a00 0%, #050505 100%);
+            z-index: -1;
+        }
+
+        .container {
+            text-align: center;
+            padding: 2rem;
+            max-width: 900px;
+        }
+
+        h1 {
+            font-size: 4.5rem;
+            margin-bottom: 0.2rem;
+            text-transform: uppercase;
+            letter-spacing: 6px;
+            background: linear-gradient(to bottom, #fff 40%, var(--accent-yellow));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 0 15px var(--electric-glow));
+        }
+
+        .tagline {
+            font-size: 1.3rem;
+            color: var(--text-dim);
+            margin-bottom: 3rem;
+            font-style: italic;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            text-decoration: none;
+            padding: 14px 30px;
+            border-radius: 4px;
+            font-weight: 800;
+            transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            border: 2px solid var(--accent-yellow);
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-yellow);
+            color: #000;
+            box-shadow: 0 0 20px var(--electric-glow);
+        }
+
+        .btn-primary:hover {
+            background-color: transparent;
+            color: var(--accent-yellow);
+            box-shadow: 0 0 35px var(--accent-yellow);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            color: var(--accent-yellow);
+            background: rgba(255, 223, 0, 0.05);
+        }
+
+        .btn-secondary:hover {
+            background: var(--accent-yellow);
+            color: #000;
+            transform: translateY(-2px);
+        }
+
+        .license-tag {
+            margin-top: 2rem;
+            font-size: 0.8rem;
+            color: #444;
+            letter-spacing: 1px;
+        }
+
+        footer {
+            margin-top: 4rem;
+            padding: 30px;
+            border-top: 1px solid #1a1a1a;
+            width: 100%;
+            text-align: center;
+            background: rgba(0,0,0,0.5);
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .nc-row {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        footer a {
+            color: var(--text-dim);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: 0.2s;
+        }
+
+        footer a:hover {
+            color: var(--accent-yellow);
+        }
+
+        .gamejolt-link {
+            font-weight: bold;
+            color: #ffdf00 !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-glow"></div>
+
+    <div class="container">
+        <h1>STORMWARP</h1>
+        <p class="tagline">The High-Voltage TurboWarp Experience.</p>
+        
+        <div class="btn-group">
+            <a href="https://stormwindsky.github.io/scratch-gui/" class="btn btn-primary">⚡ Launch Editor</a>
+            <a href="https://stormwindsky.github.io/StormWarp/Samples" class="btn btn-secondary">Samples Projects</a>
+            <a href="https://gamejolt.com/c/Stormwindsky-yk7ybk/review_for_stormwarp" class="btn btn-secondary">Review StormWarp</a>
+            <a href="https://www.stormwindsky.com" class="btn btn-secondary">My Main Website</a>
+        </div>
+
+        <div class="license-tag">Licensed under GPL-3.0</div>
+    </div>
+
+    <footer>
+        <div class="footer-links">
+            <div class="nc-row">
+                <a href="/StormWarp/N&C/Notes & Credits (CC0 1.0 Contents).html">Notes & Credits (CC0 1.0)</a>
+                <a href="/StormWarp/N&C/Notes & Credits (CC BY 4.0 Contents).html">Notes & Credits (CC BY 4.0)</a>
+            </div>
+            <a href="https://gamejolt.com/@Stormwindsky" class="gamejolt-link">Follow me on GameJolt @Stormwindsky</a>
+            <p style="font-size: 0.75rem; color: #555;">&copy; 2026 StormWindSky. StormWarp is a fork of TurboWarp.</p>
+        </div>
+    </footer>
+</body>
+</html>
