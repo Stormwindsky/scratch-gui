@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StormWarp | Project Hub</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --electric-blue: #00f2ff;
+            --electric-glow: rgba(0, 242, 255, 0.5);
+            --dark-bg: #000000;
+            --card-bg: #0a0a0c;
+            --text-main: #e0e0e0;
+            --accent-gradient: linear-gradient(90deg, #00f2ff 0%, #0066ff 100%);
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: var(--text-main);
+            font-family: 'Rajdhani', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: 
+                linear-gradient(rgba(0, 242, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 242, 255, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            z-index: -1;
+        }
+
+        header {
+            height: 200px;
+            background: linear-gradient(135deg, #000000 0%, #06111a 50%, #000000 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 2px solid var(--electric-blue);
+            box-shadow: 0 0 20px var(--electric-glow);
+        }
+
+        header h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3rem;
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            text-shadow: 0 0 15px var(--electric-blue);
+            margin: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        /* Back Navigation Style */
+        .back-nav { margin-bottom: 30px; }
+        .back-nav a {
+            color: var(--electric-blue);
+            text-decoration: none;
+            font-weight: bold;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.9rem;
+            border: 1px solid var(--electric-blue);
+            padding: 8px 15px;
+            transition: 0.3s;
+        }
+        .back-nav a:hover {
+            background: var(--electric-blue);
+            color: black;
+            box-shadow: 0 0 15px var(--electric-blue);
+        }
+
+        .badge {
+            display: inline-block;
+            background: var(--accent-gradient);
+            color: black;
+            padding: 5px 15px;
+            font-weight: bold;
+            font-family: 'Orbitron', sans-serif;
+            margin-bottom: 30px;
+            clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
+        }
+
+        #project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(0, 242, 255, 0.2);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--electric-blue);
+            box-shadow: 0 0 20px var(--electric-glow);
+        }
+
+        .thumbnail-container {
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            background: #111;
+            overflow: hidden;
+            border-bottom: 1px solid rgba(0, 242, 255, 0.1);
+        }
+
+        .thumbnail-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .project-info { padding: 15px; text-align: center; }
+
+        .project-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.1rem;
+            color: var(--electric-blue);
+            margin: 0;
+            text-transform: uppercase;
+        }
+
+        .loader { 
+            text-align: center; 
+            color: var(--electric-blue); 
+            padding: 50px; 
+            font-family: 'Orbitron'; 
+            grid-column: 1 / -1;
+        }
+
+        footer {
+            margin-top: 50px;
+            padding: 40px;
+            border-top: 1px solid rgba(0, 242, 255, 0.2);
+        }
+
+        .license-box {
+            max-width: 900px;
+            margin: 0 auto;
+            background: rgba(0, 242, 255, 0.05);
+            padding: 20px;
+            border-left: 4px solid var(--electric-blue);
+        }
+
+        .license-box a { color: var(--electric-blue); text-decoration: none; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>StormWarp</h1>
+</header>
+
+<div class="container">
+    <nav class="back-nav">
+        <a href="https://stormwindsky.github.io/StormWarp/">← BACK TO HOME</a>
+    </nav>
+
+    <div class="badge">SYSTEM ONLINE: SAMPLES</div>
+    
+    <div id="project-grid">
+        <div id="loader" class="loader">FETCHING DATA FROM HUB...</div>
+    </div>
+
+    <footer>
+        <div class="license-box">
+            <p><strong>Interface:</strong> Licensed under <a href="https://www.gnu.org/licenses/gpl-3.0.html">GPL-3.0</a>.</p>
+            <p><strong>Projects:</strong> All .sw files are licensed under <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0</a>.</p>
+        </div>
+    </footer>
+</div>
+
+<script>
+    // Configuration des URLs
+    const PROJECT_API = "https://api.github.com/repos/Stormwindsky/Samples-StormWarp-Projects/contents/Contents/Samples";
+    const IMAGE_API = "https://api.github.com/repos/Stormwindsky/Samples-StormWarp-Projects/contents/Contents/Images";
+    
+    const PROJECT_RAW_ROOT = "https://raw.githubusercontent.com/Stormwindsky/Samples-StormWarp-Projects/main/Contents/Samples/";
+    const IMAGE_RAW_ROOT = "https://raw.githubusercontent.com/Stormwindsky/Samples-StormWarp-Projects/main/Contents/Images/";
+    const PLACEHOLDER = "https://raw.githubusercontent.com/Stormwindsky/Samples-StormWarp-Projects/main/Contents/place%20holder.png";
+    
+    // Votre fork StormWarp
+    const EDITOR_URL = "https://stormwindsky.github.io/scratch-gui/editor?project_url=";
+
+    async function init() {
+        const grid = document.getElementById('project-grid');
+        
+        try {
+            const [projRes, imgRes] = await Promise.all([
+                fetch(PROJECT_API),
+                fetch(IMAGE_API)
+            ]);
+
+            const projects = await projRes.json();
+            const images = await imgRes.json();
+
+            grid.innerHTML = '';
+
+            projects.filter(f => f.name.endsWith('.sw')).forEach(file => {
+                const nameOnly = file.name.replace('.sw', '');
+                
+                const hasThumb = images.some(img => img.name === nameOnly + '.png');
+                const thumbSrc = hasThumb ? (IMAGE_RAW_ROOT + encodeURIComponent(nameOnly + '.png')) : PLACEHOLDER;
+                const projectLink = EDITOR_URL + PROJECT_RAW_ROOT + encodeURIComponent(file.name);
+
+                const card = document.createElement('a');
+                card.className = 'project-card';
+                card.href = projectLink;
+                card.target = "_blank";
+                card.innerHTML = `
+                    <div class="thumbnail-container">
+                        <img src="${thumbSrc}" alt="${nameOnly}" onerror="this.src='${PLACEHOLDER}'">
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">${nameOnly}</h3>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+
+        } catch (e) {
+            document.getElementById('loader').innerText = "ERROR: CORE DATABASE OFFLINE";
+        }
+    }
+
+    init();
+</script>
+
+</body>
+</html>
