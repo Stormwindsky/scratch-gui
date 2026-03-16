@@ -39555,15 +39555,17 @@ let messages = Object(react_intl__WEBPACK_IMPORTED_MODULE_0__["defineMessages"])
   }
 });
 messages = _objectSpread(_objectSpread({}, messages), _shared_messages__WEBPACK_IMPORTED_MODULE_1__["default"]);
+
+// use the default message if a translation function is not passed
 const defaultTranslator = msgObj => msgObj.defaultMessage;
+
+/**
+ * Generate a localized version of the default project
+ * @param {function} translateFunction a function to use for translating the default names
+ * @return {object} the project data json for the default project
+ */
 const projectData = translateFunction => {
   const translator = translateFunction || defaultTranslator;
-
-  // Récupération du nom personnalisé si disponible
-  const savedKustom = JSON.parse(localStorage.getItem('kustoms_config') || '{}');
-  const spriteName = savedKustom.spriteName || translator(messages.sprite, {
-    index: 1
-  });
   return {
     targets: [{
       isStage: true,
@@ -39589,8 +39591,9 @@ const projectData = translateFunction => {
       volume: 100
     }, {
       isStage: false,
-      name: spriteName,
-      // Nom dynamique
+      name: translator(messages.sprite, {
+        index: 1
+      }),
       variables: {},
       lists: {},
       broadcasts: {},
@@ -39599,13 +39602,14 @@ const projectData = translateFunction => {
       currentCostume: 0,
       costumes: [{
         assetId: '927d672925e7b99f7813735c484c6922',
-        name: 'Znak',
-        // Nom forcé à Znak
+        name: translator(messages.costume, {
+          index: 1
+        }),
         bitmapResolution: 1,
         md5ext: '927d672925e7b99f7813735c484c6922.svg',
         dataFormat: 'svg',
-        rotationCenterX: 30.749,
-        rotationCenterY: 58.864
+        rotationCenterX: 30.74937882782359,
+        rotationCenterY: 58.864768144346826
       }],
       sounds: [],
       volume: 100,
