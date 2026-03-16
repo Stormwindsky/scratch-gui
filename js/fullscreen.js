@@ -39483,13 +39483,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _tw_text_encoder__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../tw-text-encoder */ "./src/lib/tw-text-encoder.js");
 
 
-/* eslint-disable import/no-unresolved */
 
 
 
-/* eslint-enable import/no-unresolved */
-
-const defaultProject = translator => {
+const defaultProject = async translator => {
   if (_arraybuffer_loader_override_default_project_sb3__WEBPACK_IMPORTED_MODULE_1___default.a.byteLength > 0) {
     return [{
       id: 0,
@@ -39498,13 +39495,19 @@ const defaultProject = translator => {
       data: _arraybuffer_loader_override_default_project_sb3__WEBPACK_IMPORTED_MODULE_1___default.a
     }];
   }
-  let _TextEncoder;
-  if (typeof _tw_text_encoder__WEBPACK_IMPORTED_MODULE_4__["TextEncoder"] === 'undefined') {
-    _TextEncoder = __webpack_require__(/*! text-encoding */ "./src/lib/tw-text-encoder.js").TextEncoder;
-  } else {
-    _TextEncoder = _tw_text_encoder__WEBPACK_IMPORTED_MODULE_4__["TextEncoder"];
+  const encoder = new _tw_text_encoder__WEBPACK_IMPORTED_MODULE_4__["TextEncoder"]();
+  const savedKustom = JSON.parse(localStorage.getItem('kustoms_config') || '{}');
+
+  // Si une URL est définie, on la récupère, sinon on utilise le fichier par défaut
+  let svgData = _raw_loader_Znak_svg__WEBPACK_IMPORTED_MODULE_3___default.a;
+  if (savedKustom.spriteUrl) {
+    try {
+      const response = await fetch(savedKustom.spriteUrl);
+      svgData = await response.text();
+    } catch (e) {
+      console.error("Could not load custom SVG", e);
+    }
   }
-  const encoder = new _TextEncoder();
   const projectJson = Object(_project_data__WEBPACK_IMPORTED_MODULE_0__["default"])(translator);
   return [{
     id: 0,
@@ -39520,7 +39523,7 @@ const defaultProject = translator => {
     id: '927d672925e7b99f7813735c484c6922',
     assetType: 'ImageVector',
     dataFormat: 'SVG',
-    data: encoder.encode(_raw_loader_Znak_svg__WEBPACK_IMPORTED_MODULE_3___default.a)
+    data: encoder.encode(svgData)
   }];
 };
 /* harmony default export */ __webpack_exports__["default"] = (defaultProject);
