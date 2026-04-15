@@ -1015,7 +1015,7 @@ class MenuBar extends React.Component {
                     <div className={styles.menuBarItem}>
                         <a
                             className={styles.feedbackLink}
-                            href="https://stormwindsky.github.io/StormWarp/"
+                            href="https://stormwindsky.github.io/scratch-gui/mainpage.html"
                             rel="noopener noreferrer"
                             target="_blank"
                         >
