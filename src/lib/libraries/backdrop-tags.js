@@ -7,7 +7,5 @@ export default [
     {tag: 'indoors', intlLabel: messages.indoors},
     {tag: 'space', intlLabel: messages.space},
     {tag: 'underwater', intlLabel: messages.underwater},
-    {tag: 'patterns', intlLabel: messages.patterns},
-    {tag: 'opengameart', intlLabel: messages.opengameart},
-    {tag: 'stormwindsky', intlLabel: messages.stormwindsky}
+    {tag: 'patterns', intlLabel: messages.patterns}
 ];
