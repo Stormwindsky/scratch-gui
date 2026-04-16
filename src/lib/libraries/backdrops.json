@@ -1,20 +1,20 @@
 [
     {
-        "name": "kitchen Background (items)",
+        "name": "Space1",
         "tags": [
-            "cc0"
+            "OpenGameArt"
         ],
-        "assetId": "21e4c3efbf376e69b2eb2fcbc0f1af80",
+        "assetId": "81801dd92eb894a0d343657957d1753d",
         "bitmapResolution": 2,
         "dataFormat": "png",
-        "md5ext": "21e4c3efbf376e69b2eb2fcbc0f1af80.png",
+        "md5ext": "81801dd92eb894a0d343657957d1753d.png",
         "rotationCenterX": 240,
         "rotationCenterY": 180
     },
     {
-        "name": "kitchen Background",
+        "name": "glitch backdrops (4 fun lol)",
         "tags": [
-            "cc0"
+            "glitch"
         ],
         "assetId": "f0dd7c357e570ee886a78418231ce85d",
         "bitmapResolution": 2,
