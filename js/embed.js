@@ -38496,6 +38496,12 @@ __webpack_require__.r(__webpack_exports__);
 }, {
   tag: 'patterns',
   intlLabel: _tag_messages_js__WEBPACK_IMPORTED_MODULE_0__["default"].patterns
+}, {
+  tag: 'opengameart',
+  intlLabel: _tag_messages_js__WEBPACK_IMPORTED_MODULE_0__["default"].opengameart
+}, {
+  tag: 'stormwindsky',
+  intlLabel: _tag_messages_js__WEBPACK_IMPORTED_MODULE_0__["default"].stormwindsky
 }]);
 
 /***/ }),
