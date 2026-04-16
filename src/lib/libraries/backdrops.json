@@ -8,20 +8,20 @@
         "bitmapResolution": 2,
         "dataFormat": "png",
         "md5ext": "81801dd92eb894a0d343657957d1753d.png",
-        "rotationCenterX": 240,
-        "rotationCenterY": 180
+        "rotationCenterX": 480,
+        "rotationCenterY": 360
     },
     {
         "name": "glitch backdrops (4 fun lol)",
         "tags": [
             "glitch"
         ],
-        "assetId": "f0dd7c357e570ee886a78418231ce85d",
+        "assetId": "bruh",
         "bitmapResolution": 2,
         "dataFormat": "png",
-        "md5ext": "f0dd7c357e570ee886a78418231ce85d.png",
-        "rotationCenterX": 240,
-        "rotationCenterY": 180
+        "md5ext": "bruh.png",
+        "rotationCenterX": 480,
+        "rotationCenterY": 360
     }
 ]
 
