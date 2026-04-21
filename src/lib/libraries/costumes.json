@@ -1,59 +1,59 @@
 [
     {
-        "name": "Abby-a",
+        "name": "Znak-a",
         "tags": [
-            "people",
-            "person",
-            "drawing"
+            "fantasy",
+            "dragon",
+            "snake"
         ],
-        "assetId": "809d9b47347a6af2860e7a3a35bce057",
+        "assetId": "99d5d88ff8d216d4ba0c99252a8c13d8",
         "bitmapResolution": 1,
         "dataFormat": "svg",
-        "md5ext": "809d9b47347a6af2860e7a3a35bce057.svg",
-        "rotationCenterX": 31,
-        "rotationCenterY": 100
+        "md5ext": "99d5d88ff8d216d4ba0c99252a8c13d8.svg",
+        "rotationCenterX": 44,
+        "rotationCenterY": 44
     },
     {
-        "name": "Abby-b",
+        "name": "Znak-b",
         "tags": [
-            "people",
-            "person",
-            "drawing"
+            "fantasy",
+            "dragon",
+            "snake"
         ],
-        "assetId": "920f14335615fff9b8c55fccb8971984",
+        "assetId": "ae2bd5cba30bd39ae51d2bf04af046e8",
         "bitmapResolution": 1,
         "dataFormat": "svg",
-        "md5ext": "920f14335615fff9b8c55fccb8971984.svg",
-        "rotationCenterX": 31,
-        "rotationCenterY": 100
+        "md5ext": "ae2bd5cba30bd39ae51d2bf04af046e8.svg",
+        "rotationCenterX": 44,
+        "rotationCenterY": 44
     },
     {
-        "name": "Abby-c",
+        "name": "Znak-c",
         "tags": [
-            "people",
-            "person",
-            "drawing"
+            "fantasy",
+            "dragon",
+            "snake"
         ],
-        "assetId": "34a175600dc009a521eb46fdbbbeeb67",
+        "assetId": "be30cead81e180be6ea2e86129b44293",
         "bitmapResolution": 1,
         "dataFormat": "svg",
-        "md5ext": "34a175600dc009a521eb46fdbbbeeb67.svg",
-        "rotationCenterX": 32,
-        "rotationCenterY": 100
+        "md5ext": "be30cead81e180be6ea2e86129b44293.svg",
+        "rotationCenterX": 44,
+        "rotationCenterY": 44
     },
     {
-        "name": "Abby-d",
+        "name": "Znak-d",
         "tags": [
-            "people",
-            "person",
-            "drawing"
+            "fantasy",
+            "dragon",
+            "snake"
         ],
-        "assetId": "45de34b47a2ce22f6f5d28bb35a44ff5",
+        "assetId": "843347ea01965d3045445b4e1e19d562",
         "bitmapResolution": 1,
         "dataFormat": "svg",
-        "md5ext": "45de34b47a2ce22f6f5d28bb35a44ff5.svg",
-        "rotationCenterX": 32,
-        "rotationCenterY": 101
+        "md5ext": "843347ea01965d3045445b4e1e19d562.svg",
+        "rotationCenterX": 44,
+        "rotationCenterY": 44
     },
     {
         "name": "Amon",
