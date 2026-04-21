@@ -13,15 +13,15 @@
         "rate": 44100
     },
     {
-        "name": "A Elec Bass",
+        "name": "Nothing",
         "tags": [
-            "music",
-            "instruments",
-            "notes"
+            "no",
+            "bruh",
+            "nope"
         ],
-        "assetId": "5cb46ddd903fc2c9976ff881df9273c9",
+        "assetId": "Nothing",
         "dataFormat": "",
-        "md5ext": "5cb46ddd903fc2c9976ff881df9273c9.wav",
+        "md5ext": "Nothing",
         "sampleCount": 11840,
         "rate": 44100
     }
