@@ -69,22 +69,19 @@
         "rotationCenterY": 162
     },
     {
-        "name": "Andie-a",
+        "name": "ham",
         "tags": [
-            "sports",
-            "basketball",
-            "people",
-            "wheelchair",
-            "handicap",
-            "handicapable",
-            "alex eben meyer"
+            "food",
+            "meat",
+            "foods",
+            "meats"
         ],
-        "assetId": "b36584db82bdd45014430aa918461ca0",
+        "assetId": "be5e56b233b9c283533d14ce369f5ceb",
         "bitmapResolution": 1,
-        "dataFormat": "svg",
-        "md5ext": "b36584db82bdd45014430aa918461ca0.svg",
-        "rotationCenterX": 80,
-        "rotationCenterY": 65
+        "dataFormat": "png",
+        "md5ext": "be5e56b233b9c283533d14ce369f5ceb.png",
+        "rotationCenterX": 31,
+        "rotationCenterY": 31
     },
     {
         "name": "Andie-b",
