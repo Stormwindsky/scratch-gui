@@ -2494,5 +2494,75 @@
         "tags": [
             "library"
         ]
+    },
+    {
+        "name": "Non (No in french)",
+        "md5ext": "ff9e61daf92ef23f652e261f25656ec2.wav",
+        "sampleCount": 0,
+        "rate": 44100,
+        "format": "",
+        "tags": [
+            "library"
+        ]
+    },
+    {
+        "name": "Zombie death",
+        "md5ext": "871095b9cf5d7f6adaaa83a5e89fd614.wav",
+        "sampleCount": 0,
+        "rate": 44100,
+        "format": "",
+        "tags": [
+            "library"
+        ]
+    },
+    {
+        "name": "Zombie groan",
+        "md5ext": "2d451749249fe58ac7a59b06eeb39c87.wav",
+        "sampleCount": 0,
+        "rate": 44100,
+        "format": "",
+        "tags": [
+            "library"
+        ]
+    },
+    {
+        "name": "Zombie groan2",
+        "md5ext": "e3d3417f9b83ce181c9cbf8803f78b7a.wav",
+        "sampleCount": 0,
+        "rate": 44100,
+        "format": "",
+        "tags": [
+            "library"
+        ]
+    },
+    {
+        "name": "Zombie hurt",
+        "md5ext": "783c2e639cf1ed8b5448f8e28b9c54f1.wav",
+        "sampleCount": 0,
+        "rate": 44100,
+        "format": "",
+        "tags": [
+            "library"
+        ]
+    },
+    {
+        "name": "Zombie hurt2",
+        "md5ext": "b596523f7a9abac4808ac67da732b6c3.wav",
+        "sampleCount": 0,
+        "rate": 44100,
+        "format": "",
+        "tags": [
+            "library"
+        ]
+    },
+    {
+        "name": "Zombie hurt3",
+        "md5ext": "ff776801d9e28b197aed389fab3df587.wav",
+        "sampleCount": 0,
+        "rate": 44100,
+        "format": "",
+        "tags": [
+            "library"
+        ]
     }
 ]
