@@ -1722,7 +1722,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "/* overridden by src/lib/themes/guiHelpers.js */\n\n.tw-news_news_uzo3T {\n    background: var(--motion-tertiary);\n    display: flex;\n    flex-direction: row;\n    align-items: center;\n    justify-content: space-between;\n    padding: 0.375rem 0;\n    gap: 0.5rem;\n}\n\n.tw-news_text_1P6mJ {\n    flex-grow: 1;\n    color: white;\n    text-align: center;\n}\n\n.tw-news_text_1P6mJ a {\n    color: inherit;\n}\n\n.tw-news_close_yCgKk {\n    flex-shrink: 0;\n    margin-right: 0.5rem;\n}\n", ""]);
+exports.push([module.i, "/* overridden by src/lib/themes/guiHelpers.js */\n\n.tw-news_news_uzo3T {\n    background: var(--motion-tertiary);\n    display: flex;\n    flex-direction: row;\n    align-items: center;\n    justify-content: space-between;\n    padding: 0.375rem 0;\n    gap: 0.5rem;\n}\n\n.tw-news_text_1P6mJ {\n    flex-grow: 1;\n    color: white;\n    text-align: center;\n\n    display: flex;\n    flex-direction: column;\n    gap: 0.25rem;\n}\n\n.tw-news_text_1P6mJ a {\n    color: inherit;\n}\n\n.tw-news_close_yCgKk {\n    flex-shrink: 0;\n    margin-right: 0.5rem;\n}\n", ""]);
 
 // exports
 exports.locals = {
@@ -12080,7 +12080,7 @@ class MenuBar extends react__WEBPACK_IMPORTED_MODULE_7___default.a.Component {
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_tw_save_status_jsx__WEBPACK_IMPORTED_MODULE_30__["default"], {
       showSaveFilePicker: this.props.showSaveFilePicker
     })), aboutButton);
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_7___default.a.Fragment, null, menuBar);
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_7___default.a.Fragment, null, menuBar, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_tw_news_jsx__WEBPACK_IMPORTED_MODULE_31__["default"], null));
   }
 }
 MenuBar.propTypes = {
@@ -12977,23 +12977,25 @@ if(false) {}
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _lib_brand__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../lib/brand */ "./src/lib/brand.js");
-/* harmony import */ var _lib_brand__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_lib_brand__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _lib_isScratchDesktop__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../lib/isScratchDesktop */ "./src/lib/isScratchDesktop.js");
-/* harmony import */ var _close_button_close_button_jsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../close-button/close-button.jsx */ "./src/components/close-button/close-button.jsx");
-/* harmony import */ var _tw_news_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./tw-news.css */ "./src/components/menu-bar/tw-news.css");
-/* harmony import */ var _tw_news_css__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_tw_news_css__WEBPACK_IMPORTED_MODULE_4__);
-
+/* harmony import */ var _lib_isScratchDesktop__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../lib/isScratchDesktop */ "./src/lib/isScratchDesktop.js");
+/* harmony import */ var _close_button_close_button_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../close-button/close-button.jsx */ "./src/components/close-button/close-button.jsx");
+/* harmony import */ var _tw_news_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./tw-news.css */ "./src/components/menu-bar/tw-news.css");
+/* harmony import */ var _tw_news_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_tw_news_css__WEBPACK_IMPORTED_MODULE_3__);
 
 
 
 
 const LOCAL_STORAGE_KEY = 'tw:closedNews';
-const NEWS_ID = 'android-fraud';
-const newsAppliesToUser = () => /android/i.test(navigator.userAgent);
+const NEWS_ID = 'scratch-vulnerability';
+const newsAppliesToUser = () => false;
 const NewsBody = () => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-  className: _tw_news_css__WEBPACK_IMPORTED_MODULE_4___default.a.text
-}, "The Google Play Store app calling itself TurboWarp is illegitimate and outdated. If you were misled into installing it, leave a 1 star review, uninstall it, and report it. An official one will exist eventually.");
+  className: _tw_news_css__WEBPACK_IMPORTED_MODULE_3___default.a.text,
+  lang: "en"
+}, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, 'We discovered a critical vulnerability in all versions of Scratch. In the desktop app, opening a malicious project could install ransomware on your computer.'), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, 'We reported this to Scratch two years ago, but no fix has been released yet. The latest TurboWarp is not affected. ', /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+  href: "https://muffin.ink/blog/scratch-vulnerability-disclosure/",
+  target: "_blank",
+  rel: "noreferrer"
+}, 'More details on my blog.')));
 const getIsClosedInLocalStorage = () => {
   try {
     return localStorage.getItem(LOCAL_STORAGE_KEY) === NEWS_ID;
@@ -13025,13 +13027,13 @@ class TWNews extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
     });
   }
   render() {
-    if (this.state.closed || Object(_lib_isScratchDesktop__WEBPACK_IMPORTED_MODULE_2__["isScratchDesktop"])()) {
+    if (this.state.closed || Object(_lib_isScratchDesktop__WEBPACK_IMPORTED_MODULE_1__["isScratchDesktop"])()) {
       return null;
     }
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      className: _tw_news_css__WEBPACK_IMPORTED_MODULE_4___default.a.news
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(NewsBody, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_close_button_close_button_jsx__WEBPACK_IMPORTED_MODULE_3__["default"], {
-      className: _tw_news_css__WEBPACK_IMPORTED_MODULE_4___default.a.close,
+      className: _tw_news_css__WEBPACK_IMPORTED_MODULE_3___default.a.news
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(NewsBody, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_close_button_close_button_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      className: _tw_news_css__WEBPACK_IMPORTED_MODULE_3___default.a.close,
       onClick: this.handleClose
     }));
   }
