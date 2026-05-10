@@ -2574,5 +2574,15 @@
         "tags": [
             "library"
         ]
+    },
+    {
+        "name": "Creepy Flute Song",
+        "md5ext": "cb552a7081f17dc2cc2808d8b90a6053.wav",
+        "sampleCount": 0,
+        "rate": 44100,
+        "format": "",
+        "tags": [
+            "library"
+        ]
     }
 ]
