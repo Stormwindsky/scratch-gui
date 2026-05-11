@@ -2584,5 +2584,25 @@
         "tags": [
             "library"
         ]
+    },
+    {
+        "name": "sixsixsix (speed up)",
+        "md5ext": "ac3e3d221a960fc4dccb1196d6eda3e4.wav",
+        "sampleCount": 0,
+        "rate": 44100,
+        "format": "",
+        "tags": [
+            "library"
+        ]
+    },
+    {
+        "name": "sixsixsix",
+        "md5ext": "5d04bdcf5e10e4fdd6bd4b593904fcd0.wav",
+        "sampleCount": 0,
+        "rate": 44100,
+        "format": "",
+        "tags": [
+            "library"
+        ]
     }
 ]
