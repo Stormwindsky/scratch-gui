@@ -2704,5 +2704,35 @@
         "tags": [
             "library"
         ]
+    },
+    {
+        "name": "BONJOUR (Loud)",
+        "md5ext": "bbddcb4e4ba6e59a1380f798961fa5e0.wav",
+        "sampleCount": 0,
+        "rate": 44100,
+        "format": "",
+        "tags": [
+            "library"
+        ]
+    },
+    {
+        "name": "Random noises",
+        "md5ext": "5787a803abaa05027f14035f6c67900d.wav",
+        "sampleCount": 0,
+        "rate": 44100,
+        "format": "",
+        "tags": [
+            "library"
+        ]
+    },
+    {
+        "name": "random noises 2",
+        "md5ext": "ead0fd437aeb3dcd05df5075bd0de6fc.wav",
+        "sampleCount": 0,
+        "rate": 44100,
+        "format": "",
+        "tags": [
+            "library"
+        ]
     }
 ]
