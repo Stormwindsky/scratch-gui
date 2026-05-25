@@ -1997,15 +1997,15 @@ const extensionDevelopers = [{
 }, {
   username: '0832'
 }, {
-  userID: '74246431',
-  username: '0znzw'
-}, {
   userID: '17235330',
   username: 'aleb2005'
 }, {
+  userID: '129742989',
+  username: 'BludIsAnLemon'
+}, {
   username: 'BlueDome77'
 }, {
-  username: 'ClaytonTDM'
+  username: 'clay-rip'
 }, {
   userID: '37070511',
   username: 'cs2627883'
@@ -2019,7 +2019,13 @@ const extensionDevelopers = [{
   userID: '33988895',
   username: 'D-ScratchNinja'
 }, {
+  userID: '20632822',
+  username: 'dogeiscut'
+}, {
   username: 'DT'
+}, {
+  userID: '54392956',
+  username: 'Fath11'
 }, {
   userID: '1882674',
   username: 'griffpatch'
@@ -2030,7 +2036,13 @@ const extensionDevelopers = [{
   userID: '12498592',
   username: 'LilyMakesThings'
 }, {
+  userID: '29571977',
+  username: 'man-o-valor'
+}, {
   username: 'MikeDEV'
+}, {
+  userID: '74246431',
+  username: '0znzw'
 }, {
   userID: '62325737',
   username: 'mybearworld'
@@ -2038,10 +2050,14 @@ const extensionDevelopers = [{
   userID: '62950341',
   username: 'NamelessCat'
 }, {
+  username: 'NishiOwO'
+}, {
   username: 'NOname-awa'
 }, {
   userID: '26959223',
   username: 'pinksheep2917'
+}, {
+  username: 'Pen-Group'
 }, {
   username: 'pumpkinhasapatch'
 }, {
@@ -2071,6 +2087,9 @@ const extensionDevelopers = [{
 }, {
   userID: '52066199',
   username: 'softed'
+}, {
+  userID: '166646203',
+  username: 'Staevski_G'
 }, {
   username: 'TheShovel'
 }, {
