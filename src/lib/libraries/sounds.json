@@ -2734,5 +2734,15 @@
         "tags": [
             "library"
         ]
+    },
+    {
+        "name": "hamburger (french canadian made by Stormwindsky)",
+        "md5ext": "1ad47c34baa2d4dda1d6d6bbeb26c664.wav",
+        "sampleCount": 0,
+        "rate": 44100,
+        "format": "",
+        "tags": [
+            "library"
+        ]
     }
 ]
