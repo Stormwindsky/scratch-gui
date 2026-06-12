@@ -39749,6 +39749,13 @@ const defineDynamicBlock = (ScratchBlocks, categoryInfo, staticBlockInfo, extend
       const arg = blockInfo.arguments[argName];
       switch (arg.type) {
         case scratch_vm_src_extension_support_argument_type__WEBPACK_IMPORTED_MODULE_0___default.a.STRING:
+        case scratch_vm_src_extension_support_argument_type__WEBPACK_IMPORTED_MODULE_0___default.a.NUMBER:
+        case scratch_vm_src_extension_support_argument_type__WEBPACK_IMPORTED_MODULE_0___default.a.ANGLE:
+        case scratch_vm_src_extension_support_argument_type__WEBPACK_IMPORTED_MODULE_0___default.a.MATRIX:
+        case scratch_vm_src_extension_support_argument_type__WEBPACK_IMPORTED_MODULE_0___default.a.NOTE:
+        case scratch_vm_src_extension_support_argument_type__WEBPACK_IMPORTED_MODULE_0___default.a.COLOR:
+        case scratch_vm_src_extension_support_argument_type__WEBPACK_IMPORTED_MODULE_0___default.a.COSTUME:
+        case scratch_vm_src_extension_support_argument_type__WEBPACK_IMPORTED_MODULE_0___default.a.SOUND:
           args.push({
             type: 'input_value',
             name: argName
@@ -39759,6 +39766,15 @@ const defineDynamicBlock = (ScratchBlocks, categoryInfo, staticBlockInfo, extend
             type: 'input_value',
             name: argName,
             check: 'Boolean'
+          });
+          break;
+        case scratch_vm_src_extension_support_argument_type__WEBPACK_IMPORTED_MODULE_0___default.a.IMAGE:
+          args.push({
+            type: 'field_image',
+            src: arg.dataURI || '',
+            width: 24,
+            height: 24,
+            flip_rtl: arg.flipRTL || false
           });
           break;
       }
