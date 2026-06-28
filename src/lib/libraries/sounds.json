@@ -2744,5 +2744,15 @@
         "tags": [
             "library"
         ]
+    },
+    {
+        "name": "Applause4",
+        "md5ext": "6a0405c77f92538ad6b4e17cb3cc13cb.wav",
+        "sampleCount": 0,
+        "rate": 44100,
+        "format": "",
+        "tags": [
+            "library"
+        ]
     }
 ]
