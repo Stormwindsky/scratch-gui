@@ -13289,10 +13289,14 @@ const options = Object(react_intl__WEBPACK_IMPORTED_MODULE_3__["defineMessages"]
     "id": "tw.accent.green",
     "defaultMessage": "Green"
   },
-  // Added bisexual theme option below
   [_lib_themes_index_js__WEBPACK_IMPORTED_MODULE_8__["ACCENT_BISEXUAL"]]: {
     "id": "tw.accent.bisexual",
     "defaultMessage": "Bisexual"
+  },
+  // Added black theme option below
+  [_lib_themes_index_js__WEBPACK_IMPORTED_MODULE_8__["ACCENT_BLACK"]]: {
+    "id": "tw.accent.black",
+    "defaultMessage": "Black"
   }
 });
 const icons = {
