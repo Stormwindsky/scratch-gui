@@ -8,7 +8,7 @@ import check from './check.svg';
 import dropdownCaret from './dropdown-caret.svg';
 import {MenuItem, Submenu} from '../menu/menu.jsx';
 // Added ACCENT_YELLOW to the imports below
-import {ACCENT_BLUE, ACCENT_MAP, ACCENT_PURPLE, ACCENT_RED, ACCENT_RAINBOW, ACCENT_YELLOW, ACCENT_GREEN, ACCENT_BISEXUAL, Theme} from '../../lib/themes/index.js';
+import {ACCENT_BLUE, ACCENT_MAP, ACCENT_PURPLE, ACCENT_RED, ACCENT_RAINBOW, ACCENT_YELLOW, ACCENT_GREEN, ACCENT_BISEXUAL, ACCENT_BLACK, Theme} from '../../lib/themes/index.js';
 import {openAccentMenu, accentMenuOpen, closeSettingsMenu} from '../../reducers/menus.js';
 import {setTheme} from '../../reducers/theme.js';
 import {persistTheme} from '../../lib/themes/themePersistance.js';
@@ -47,11 +47,16 @@ const options = defineMessages({
         id: 'tw.accent.green'
     },
     
-    // Added bisexual theme option below
     [ACCENT_BISEXUAL]: {
         defaultMessage: 'Bisexual',
         description: 'Theme of the flag bisexual.',
         id: 'tw.accent.bisexual'
+    },
+        // Added black theme option below
+    [ACCENT_BLACK]: {
+        defaultMessage: 'Black',
+        description: 'Name of the black color scheme.',
+        id: 'tw.accent.black'
     }
 });
 
