@@ -1,13 +1,3 @@
-// Check the current URL immediately upon execution
-const currentUrl = window.location.href;
-const targetUrl1 = "https://stormwindsky.github.io/scratch-gui/";
-const targetUrl2 = "https://stormwindsky.github.io/scratch-gui";
-
-if (currentUrl === targetUrl1 || currentUrl === targetUrl2) {
-    // Redirect to the temporary placeholder
-    window.location.href = "https://example.com";
-}
-
 import GUI from './containers/gui.jsx';
 import AppStateHOC from './lib/app-state-hoc.jsx';
 import GuiReducer, {guiInitialState, guiMiddleware, initEmbedded, initFullScreen, initPlayer} from './reducers/gui';
