@@ -13297,6 +13297,11 @@ const options = Object(react_intl__WEBPACK_IMPORTED_MODULE_3__["defineMessages"]
   [_lib_themes_index_js__WEBPACK_IMPORTED_MODULE_8__["ACCENT_BLACK"]]: {
     "id": "tw.accent.black",
     "defaultMessage": "Black"
+  },
+  // Added frutiger aero theme option below
+  [_lib_themes_index_js__WEBPACK_IMPORTED_MODULE_8__["ACCENT_FRUTIGERAERO"]]: {
+    "id": "tw.accent.frutigeraero",
+    "defaultMessage": "Frutigeraero"
   }
 });
 const icons = {
