@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StormWarp - Default Projects</title>
+    <style>
+        :root {
+            --bg-color: #050505;
+            --accent-yellow: #ffdf00;
+            --electric-glow: rgba(255, 223, 0, 0.4);
+            --text-main: #ffffff;
+            --text-dim: #a0a0a0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Segoe UI', 'Roboto', sans-serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .bg-glow {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at 50% 50%, #1a1a00 0%, #050505 100%);
+            z-index: -1;
+        }
+
+        .container {
+            text-align: center;
+            padding: 2rem;
+            max-width: 900px;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 0.2rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            background: linear-gradient(to bottom, #fff 40%, var(--accent-yellow));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 0 15px var(--electric-glow));
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            color: var(--text-dim);
+            margin-bottom: 3rem;
+        }
+
+        .project-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-bottom: 3rem;
+        }
+
+        .project-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid #1a1a1a;
+            border-radius: 6px;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            border-color: var(--accent-yellow);
+            box-shadow: 0 0 15px rgba(255, 223, 0, 0.1);
+            background: rgba(255, 223, 0, 0.01);
+        }
+
+        .project-info {
+            text-align: left;
+        }
+
+        .project-name {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #fff;
+            margin-bottom: 5px;
+        }
+
+        .project-license {
+            font-size: 0.8rem;
+            color: var(--accent-yellow);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .btn {
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 4px;
+            font-weight: 800;
+            transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            border: 2px solid var(--accent-yellow);
+            display: inline-flex;
+            align-items: center;
+            background-color: var(--accent-yellow);
+            color: #000;
+            box-shadow: 0 0 15px var(--electric-glow);
+        }
+
+        .btn:hover {
+            background-color: transparent;
+            color: var(--accent-yellow);
+            box-shadow: 0 0 25px var(--accent-yellow);
+            transform: translateY(-2px);
+        }
+
+        .btn-back {
+            background: transparent;
+            color: var(--text-dim);
+            border-color: #333;
+            box-shadow: none;
+            margin-top: 1rem;
+        }
+
+        .btn-back:hover {
+            border-color: var(--text-main);
+            color: var(--text-main);
+            box-shadow: none;
+        }
+
+        .license-tag {
+            margin-top: 2rem;
+            font-size: 0.8rem;
+            color: #444;
+            letter-spacing: 1px;
+        }
+
+        footer {
+            margin-top: auto;
+            padding: 30px;
+            border-top: 1px solid #1a1a1a;
+            width: 100%;
+            text-align: center;
+            background: rgba(0,0,0,0.5);
+            box-sizing: border-box;
+        }
+
+        footer p {
+            margin: 5px 0;
+            font-size: 0.75rem;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-glow"></div>
+
+    <div class="container">
+        <h1>Default Projects</h1>
+        <p class="tagline">Select a template to kickstart your creation</p>
+        
+        <div class="project-list" id="projects-container"></div>
+
+        <div>
+            <a href="https://stormwindsky.github.io/scratch-gui/" class="btn btn-back">⚡ Back to Editor</a>
+        </div>
+
+        <div class="license-tag">Script licensed under GPL-3.0</div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Stormwindsky. StormWarp is a fork of TurboWarp.</p>
+        <p>Project templates listed above are dedicated to the Public Domain under CC0 1.0.</p>
+    </footer>
+
+    <script>
+        // CORRIGÉ : Utilisation de raw.githubusercontent.com pour éviter les blocages CORS
+        const projects = [
+            { name: "Classic", file: "Classic.sw" },
+            { name: "Mobile", file: "Mobile.sw" },
+            { name: "Modern", file: "Modern.sw" }
+        ];
+
+        const baseUrl = "https://stormwindsky.github.io/scratch-gui/editor.html?project_url=";
+        const rawGithubUrl = "https://raw.githubusercontent.com/Stormwindsky/Default-Project-for-StormWarp/main/";
+
+        const container = document.getElementById('projects-container');
+
+        projects.forEach(project => {
+            const fullUrl = `${baseUrl}${encodeURIComponent(rawGithubUrl + project.file)}`;
+
+            const card = document.createElement('div');
+            card.className = 'project-card';
+
+            card.innerHTML = `
+                <div class="project-info">
+                    <div class="project-name">${project.name}</div>
+                    <div class="project-license">License: CC0 1.0</div>
+                </div>
+                <a href="${fullUrl}" class="btn">Launch Project</a>
+            `;
+
+            container.appendChild(card);
+        });
+    </script>
+</body>
+</html>
