@@ -9,6 +9,7 @@ import * as accentGreen from './accent/green';
 import * as accentBisexual from './accent/bisexual';
 import * as accentBlack from './accent/black';
 import * as accentFrutigeraero from './accent/frutigeraero';
+import * as accentCustom from './accent/custom';
 
 import * as guiLight from './gui/light';
 import * as guiDark from './gui/dark';
@@ -26,6 +27,7 @@ const ACCENT_GREEN = 'green';
 const ACCENT_BISEXUAL = 'bisexual';
 const ACCENT_BLACK = 'black';
 const ACCENT_FRUTIGERAERO = 'frutigeraero';
+const ACCENT_CUSTOM = 'custom';
 
 const ACCENT_MAP = {
     [ACCENT_PURPLE]: accentPurple,
@@ -36,7 +38,8 @@ const ACCENT_MAP = {
     [ACCENT_GREEN]: accentGreen,
     [ACCENT_BISEXUAL]: accentBisexual,
     [ACCENT_BLACK]: accentBlack,
-    [ACCENT_FRUTIGERAERO]: accentFrutigeraero
+    [ACCENT_FRUTIGERAERO]: accentFrutigeraero,
+    [ACCENT_CUSTOM]: accentCustom
 };
 
 // Set Yellow as the default accent theme
@@ -173,6 +176,7 @@ export {
     ACCENT_BISEXUAL,
     ACCENT_BLACK,
     ACCENT_FRUTIGERAERO,
+    ACCENT_CUSTOM,
     ACCENT_MAP,
 
     GUI_LIGHT,
