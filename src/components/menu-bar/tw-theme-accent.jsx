@@ -57,6 +57,12 @@ const options = defineMessages({
         defaultMessage: 'Black',
         description: 'Name of the black color scheme.',
         id: 'tw.accent.black'
+    },
+        // Added frutiger aero theme option below
+    [ACCENT_FRUTIGERAERO]: {
+        defaultMessage: 'Frutigeraero',
+        description: 'Theme of the frutiger aero.',
+        id: 'tw.accent.frutigeraero'
     }
 });
 
