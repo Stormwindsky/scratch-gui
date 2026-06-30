@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StormWarp Custom Theme Generator</title>
+    <style>
+        :root {
+            --bg-color: #111827;
+            --card-bg: #1f2937;
+            --text-color: #f3f4f6;
+            --accent-color: #ea580c; /* Default Orange Theme Accent */
+            --accent-hover: #c2410c;
+            --border-color: #374151;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1000px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+            width: 100%;
+            max-width: 1000px;
+        }
+
+        h1 { margin: 0 0 10px 0; color: #fff; }
+        p { margin: 0; color: #9ca3af; font-size: 0.95rem; }
+        a { color: #fb923c; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            margin-top: 0;
+            font-size: 1.2rem;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 10px;
+            color: #f3f4f6;
+        }
+
+        h3 {
+            font-size: 1rem;
+            color: #fb923c;
+            margin: 15px 0 10px 0;
+        }
+
+        .color-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            background: rgba(0,0,0,0.2);
+            padding: 8px 12px;
+            border-radius: 6px;
+        }
+
+        .color-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .color-label {
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .color-picker-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        input[type="color"] {
+            -webkit-appearance: none;
+            border: none;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            cursor: pointer;
+            background: none;
+        }
+
+        input[type="color"]::-webkit-color-swatch-wrapper { padding: 0; }
+        input[type="color"]::-webkit-color-swatch { border: 2px solid var(--border-color); border-radius: 50%; }
+
+        .hex-output {
+            font-family: monospace;
+            font-size: 0.85rem;
+            background: #111827;
+            padding: 4px 8px;
+            border-radius: 4px;
+            width: 70px;
+            text-align: center;
+        }
+
+        .actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        button {
+            flex: 1;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .btn-primary { background-color: var(--accent-color); color: white; }
+        .btn-primary:hover { background-color: var(--accent-hover); }
+        .btn-secondary { background-color: #4b5563; color: white; }
+        .btn-secondary:hover { background-color: #374151; }
+
+        .preview-box {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        pre {
+            background-color: #111827;
+            padding: 15px;
+            border-radius: 6px;
+            overflow-x: auto;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.85rem;
+            flex-grow: 1;
+            margin: 0;
+            border: 1px solid var(--border-color);
+            color: #f97316;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>TurboWarp Custom Theme Generator</h1>
+        <p>Tailored for <a href="https://github.com/Stormwindsky/scratch-gui/" target="_blank">Stormwindsky/scratch-gui</a></p>
+    </header>
+
+    <div class="container">
+        <div class="card">
+            <h2>Theme Customization</h2>
+            
+            <div class="color-group">
+                <h3>GUI Colors (Orange Default)</h3>
+                <div id="gui-colors-container"></div>
+            </div>
+
+            <div class="color-group">
+                <h3>Block Colors</h3>
+                <div id="block-colors-container"></div>
+            </div>
+
+            <div class="actions">
+                <button class="btn-secondary" onclick="resetTheme()">Reset to Orange Default</button>
+                <button class="btn-primary" onclick="downloadThemeFile()">Download custom.js</button>
+            </div>
+        </div>
+
+        <div class="card preview-box">
+            <h2>Live Code Preview (custom.js)</h2>
+            <pre id="code-preview"></pre>
+        </div>
+    </div>
+
+    <script>
+        // Default configurations based on an Orange Theme
+        const defaultTheme = {
+            guiColors: {
+                'motion-primary': '#ea580c',
+                'motion-tertiary': '#c2410c',
+                'looks-secondary': '#ea580c',
+                'looks-secondary-dark': '#9a3412',
+                'extensions-primary': '#f97316',
+                'extensions-tertiary': '#bc4711',
+                'extensions-light': '#ffedd5',
+                'drop-highlight': '#ffedd5'
+            },
+            blockColors: {
+                checkboxActiveBackground: '#ea580c',
+                checkboxActiveBorder: '#c2410c'
+            }
+        };
+
+        let currentTheme = JSON.parse(JSON.stringify(defaultTheme));
+
+        // Load saved settings from LocalStorage
+        function loadSavedTheme() {
+            const saved = localStorage.getItem('tw-custom-theme-values');
+            if (saved) {
+                try {
+                    currentTheme = JSON.parse(saved);
+                } catch(e) {
+                    console.error("Error loading theme from local storage", e);
+                }
+            }
+        }
+
+        // Render input controls
+        function renderInputs() {
+            const guiContainer = document.getElementById('gui-colors-container');
+            const blockContainer = document.getElementById('block-colors-container');
+            
+            guiContainer.innerHTML = '';
+            blockContainer.innerHTML = '';
+
+            Object.keys(currentTheme.guiColors).forEach(key => {
+                guiContainer.appendChild(createColorRow(key, currentTheme.guiColors[key], 'guiColors'));
+            });
+
+            Object.keys(currentTheme.blockColors).forEach(key => {
+                blockContainer.appendChild(createColorRow(key, currentTheme.blockColors[key], 'blockColors'));
+            });
+        }
+
+        function createColorRow(key, value, section) {
+            const row = document.createElement('div');
+            row.className = 'color-row';
+
+            row.innerHTML = `
+                <div class="color-info">
+                    <span class="color-label">${key}</span>
+                </div>
+                <div class="color-picker-wrapper">
+                    <input type="color" value="${value}" oninput="updateColor('${section}', '${key}', this.value)">
+                    <span class="hex-output" id="hex-${section}-${key}">${value.toUpperCase()}</span>
+                </div>
+            `;
+            return row;
+        }
+
+        // Update values and save them automatically to localStorage
+        function updateColor(section, key, value) {
+            currentTheme[section][key] = value;
+            document.getElementById(`hex-${section}-${key}`).innerText = value.toUpperCase();
+            
+            localStorage.setItem('tw-custom-theme-values', JSON.stringify(currentTheme));
+            updatePreview();
+        }
+
+        // Generates the content for custom.js with dynamic alphas
+        function generateJSContent() {
+            return `// Custom Theme Configuration
+const guiColors = {
+    // Motion (Custom Orange based)
+    'motion-primary': '${currentTheme.guiColors['motion-primary']}',
+    'motion-primary-transparent': '${currentTheme.guiColors['motion-primary']}E6',
+    'motion-tertiary': '${currentTheme.guiColors['motion-tertiary']}',
+
+    // Looks
+    'looks-secondary': '${currentTheme.guiColors['looks-secondary']}',
+    'looks-transparent': '${currentTheme.guiColors['looks-secondary']}59',
+    'looks-light-transparent': '${currentTheme.guiColors['looks-secondary']}26',
+    'looks-secondary-dark': '${currentTheme.guiColors['looks-secondary-dark']}',
+
+    // Extensions
+    'extensions-primary': '${currentTheme.guiColors['extensions-primary']}',
+    'extensions-tertiary': '${currentTheme.guiColors['extensions-tertiary']}',
+    'extensions-transparent': '${currentTheme.guiColors['extensions-primary']}59',
+    'extensions-light': '${currentTheme.guiColors['extensions-light']}',
+
+    // Drop Highlight
+    'drop-highlight': '${currentTheme.guiColors['drop-highlight']}'
+};
+
+const blockColors = {
+    checkboxActiveBackground: '${currentTheme.blockColors.checkboxActiveBackground}',
+    checkboxActiveBorder: '${currentTheme.blockColors.checkboxActiveBorder}'
+};
+
+export {
+    guiColors,
+    blockColors
+};`;
+        }
+
+        function updatePreview() {
+            document.getElementById('code-preview').innerText = generateJSContent();
+        }
+
+        function resetTheme() {
+            if(confirm("Are you sure you want to revert all changes to default orange settings?")) {
+                currentTheme = JSON.parse(JSON.stringify(defaultTheme));
+                localStorage.removeItem('tw-custom-theme-values');
+                renderInputs();
+                updatePreview();
+            }
+        }
+
+        // Download custom.js file
+        function downloadThemeFile() {
+            const text = generateJSContent();
+            const blob = new Blob([text], { type: 'text/javascript' });
+            const anchor = document.createElement('a');
+            anchor.download = 'custom.js';
+            anchor.href = window.URL.createObjectURL(blob);
+            anchor.dataset.downloadurl = ['text/javascript', anchor.download, anchor.href].join(':');
+            anchor.style.display = 'none';
+            document.body.appendChild(anchor);
+            anchor.click();
+            document.body.removeChild(anchor);
+        }
+
+        // Initialize
+        loadSavedTheme();
+        renderInputs();
+        updatePreview();
+    </script>
+</body>
+</html>
