@@ -8,7 +8,7 @@ import * as accentYellow from './accent/yellow';
 import * as accentGreen from './accent/green';
 import * as accentBisexual from './accent/bisexual';
 import * as accentBlack from './accent/black';
-import * as accentBlack from './accent/frutigeraero';
+import * as accentFrutigeraero from './accent/frutigeraero';
 
 import * as guiLight from './gui/light';
 import * as guiDark from './gui/dark';
@@ -25,7 +25,7 @@ const ACCENT_YELLOW = 'yellow';
 const ACCENT_GREEN = 'green';
 const ACCENT_BISEXUAL = 'bisexual';
 const ACCENT_BLACK = 'black';
-const ACCENT_BLACK = 'frutigeraero';
+const ACCENT_FRUTIGERAERO = 'frutigeraero';
 
 const ACCENT_MAP = {
     [ACCENT_PURPLE]: accentPurple,
