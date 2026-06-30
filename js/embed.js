@@ -13302,6 +13302,11 @@ const options = Object(react_intl__WEBPACK_IMPORTED_MODULE_3__["defineMessages"]
   [_lib_themes_index_js__WEBPACK_IMPORTED_MODULE_8__["ACCENT_FRUTIGERAERO"]]: {
     "id": "tw.accent.frutigeraero",
     "defaultMessage": "Frutigeraero"
+  },
+  // Added Custom theme option below
+  [_lib_themes_index_js__WEBPACK_IMPORTED_MODULE_8__["ACCENT_CUSTOM"]]: {
+    "id": "tw.accent.custom",
+    "defaultMessage": "Custom"
   }
 });
 const icons = {
