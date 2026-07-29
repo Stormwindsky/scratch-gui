@@ -180809,7 +180809,7 @@ class Runtime extends EventEmitter {
     // Remove any existing thread.
     for (let i = 0; i < this.threads.length; i++) {
       // Toggling a script that's already running turns it off
-      if (this.threads[i].topBlock === topBlockId && this.threads[i].status !== Thread.STATUS_DONE) {
+      if (this.threads[i].target === opts.target && this.threads[i].topBlock === topBlockId && this.threads[i].status !== Thread.STATUS_DONE) {
         const blockContainer = opts.target.blocks;
         const opcode = blockContainer.getOpcode(blockContainer.getBlock(topBlockId));
         if (this.getIsEdgeActivatedHat(opcode) && this.threads[i].stackClick !== opts.stackClick) {
@@ -184181,17 +184181,24 @@ const animationFrameWrapper = callback => {
 
 /**
  * We've found that having an empty requestAnimationFrame loop running in the background improves frame
- * pacing in many situations. See https://github.com/TurboWarp/scratch-vm/issues/257.
+ * pacing in many situations.
  *
  * Having an extra loop running increases CPU usage and battery usage even if it's not doing anything.
  * So, we only do this when the intended framerate is high enough that the user clearly wants smooth
  * motion, and only if the user is on a platform where we have evidence that this helps:
- *  - Chrome, Edge, and other Chromium on Windows
+ *
+ * Chrome on Windows: We think this is related to timer precision, where using rAF might be making Chrome
+ * give us a more precise timer.
+ * See https://github.com/TurboWarp/scratch-vm/issues/257.
+ *
+ * Chrome on Android. Chrome throttles frame production when it does not believe there is an animation
+ * happening. setInterval does not count as an animation, but rAF does.
+ * See https://github.com/TurboWarp/scratch-vm/issues/343.
  *
  * @param {number} framerate Intended framerate
  * @returns {boolean} true if no-op animation frame loop should be used
  */
-const shouldUseNoopAnimationFrame = framerate => framerate >= 30 && navigator.userAgent.includes('Chrome') && navigator.userAgent.includes('Windows');
+const shouldUseNoopAnimationFrame = framerate => framerate >= 30 && navigator.userAgent.includes('Chrome') && (navigator.userAgent.includes('Windows') || navigator.userAgent.includes('Android'));
 class FrameLoop {
   constructor(runtime) {
     this.runtime = runtime;
