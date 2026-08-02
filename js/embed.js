@@ -33470,14 +33470,8 @@ parsed.origin === 'https://raw.githubusercontent.com' || parsed.origin === 'http
 parsed.origin === 'https://gitlab.com' ||
 // Sourcehut Pages
 parsed.origin.endsWith('.srht.site') ||
-// Itch
-parsed.origin.endsWith('.itch.io') ||
 // GameJolt
-parsed.origin === 'https://api.gamejolt.com' ||
-// httpbin
-parsed.origin === 'https://httpbin.org' ||
-// ScratchDB
-parsed.origin === 'https://scratchdb.lefty.one';
+parsed.origin === 'https://api.gamejolt.com';
 const FETCHABLE_PROTOCOLS = ['http:', 'https:', 'data:', 'blob:', 'ws:', 'wss:'];
 const VISITABLE_PROTOCOLS = [
 // The important one we want to exclude is javascript:
